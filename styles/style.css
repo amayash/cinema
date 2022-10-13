@@ -22,6 +22,16 @@ h2 {
     font-weight: bold;
 }
 
+h2 a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    text-decoration: underline;
+}
+
 ol {
     font-size: large;
     color: #ffffff;

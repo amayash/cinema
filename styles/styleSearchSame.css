@@ -107,6 +107,15 @@ header a:hover {
     justify-content: flex-end !important;
     flex-grow: 1;
 }
+h2 a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    text-decoration: underline;
+}
 
 #mark {
     padding: 0.5em;

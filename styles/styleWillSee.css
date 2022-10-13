@@ -115,7 +115,15 @@ header a:hover {
     border: none;
     border-radius: 10px;
 }
+h2 a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
 
+h2 a:hover {
+    text-decoration: underline;
+}
 #delete {
     padding: 0.5em;
     padding-left: 2.45em;
