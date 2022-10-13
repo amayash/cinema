@@ -1,0 +1,158 @@
+html,
+body {
+    background: #2b2d33;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: small;
+    line-height: 1.2;
+    height: 100%;
+}
+
+h1 {
+    margin-inline-start: 2.5em;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+h2 {
+    margin-inline-start: 6em;
+    font-size: large;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+ol {
+    font-size: large;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+header {
+    background-color: #1a1c20;
+    height: 64px;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    left: 0; bottom: 0; right: 0;
+    background-color: #1a1c20;
+    color: #c2c2c2;
+    height: 64px;
+    padding: 0.5em 0.5em 0.5em 3em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+footer nav {
+    color: #c2c2c2;
+    display: flex !important;
+    justify-content: center !important;
+    flex-grow: 1;
+}
+
+article {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: calc(100%-64px-64px-(0.5em*6));
+}
+
+header nav {
+    display: flex !important;
+    justify-content: flex-end !important;
+    flex-grow: 1;
+}
+
+header a {
+    color: #c2c2c2;
+    text-decoration: none;
+    margin: 0 1.5em;
+}
+
+header a:hover {
+    color: #ffffff;
+}
+
+#main {
+    margin-left: 1.5em;
+}
+
+#description {
+    margin-inline-start: 7em;
+    font-size: medium;
+    color: #8f9398;
+}
+
+#rightPanel {
+    color: #ffffff;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#mark {
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #38a65d;
+    border: none;
+    border-radius: 10px;
+}
+
+#willSee {
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #38a65d;
+    border: none;
+    border-radius: 10px;
+}
+
+#content {
+    background: #40444d;
+    height: 65%;
+    padding: 1.25em 1.5em 0em 1.5em;
+    margin: 5.5em 10.5em -10em 10.5em;
+    border: none;
+    border-radius: 40px;
+}
+
+#content_header {
+    padding: 1em;
+    margin: -1em -1.5em 0em -1.5em;
+    background-color: #8f9297;
+    border: none;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+hr {
+    border: none;
+    margin-right: 0.5em;
+    background-color: #1a1c20;
+    height: 1.5px; /* Толщина линии */
+}
+
+button {
+    margin: 0.5em;
+    padding: 0;
+    border: none;
+}
+button img { 
+    display: block;
+}
+
+form {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
