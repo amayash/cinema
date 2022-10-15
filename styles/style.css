@@ -175,17 +175,12 @@ form {
     align-items: center;
 }
 
-img[src="images/zelenayamilya.jpg"] {
+navPoster img {
     width: 90px;
     height: 120px;
 }
 
-img[src="images/vk.jpg"] {
-    width: 50px; 
-    height: 50px;
-}
-
-img[src="images/search.jpg"] {
+navIcon img {
     width: 50px; 
     height: 50px;
 }
