@@ -13,54 +13,58 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body class="d-flex flex-column h-100">
-    <header>
-        <div id="main"><a href="index.html">Главная</a></div>
+<body class="d-flex flex-column h-100 fs-6">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 align-items-center fs-4 fw-bold">
+        <div id="main"><a class="text-decoration-none" href="index.html">Главная</a></div>
         <form action="searchSame.html">
             <input type="text" name="text" class="search" placeholder="Введите название">
-            <button type="submit"><navIcon><img src="images/search.jpg" alt="Поиск" /></navIcon></button>
+            <button type="submit"><img class="icon" src="images/search.jpg" alt="Поиск" /></button>
         </form>
-        <nav>
-            <a href="choiceToTaste.html">Выбор по вкусу</a>
-            <a href="willSee.html">Буду смотреть</a>
+        <nav class="d-flex p-2 justify-content-end flex-grow-1">
+            <a class="text-decoration-none" href="choiceToTaste.html">Выбор по вкусу</a>
+            <a class="text-decoration-none" href="willSee.html">Буду смотреть</a>
         </nav>
     </header>
-    <div id="content">
+    <div class="rounded-6" id="content">
         <div id="content_header">
-            <h1>Топ 250 фильмов</h1>
+            <h1 class="fs-1 fw-bold text-white">Топ 250 фильмов</h1>
         </div>
 
-        <ol>
-            <li><navPoster><img src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left"></navPoster>
-                <h2><a href="film.html">Зеленая миля</a></h2>
-                <div id="description">
+        <ol class="fs-5 text-white fw-bold">
+            <li><img class="poster" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
+                <h2 class="fs-5 fw-bold text-white"><a class= "text-white" href="film.html">Зеленая миля</a></h2>
+                <div id="description"
+                    class="d-flex justify-content-start align-items-center fs-6">
                     США, 1999 г.<br>
                     драма, криминал
-                    <div id="rightPanel">
-                        <div id="mark">9.2</div>
-                        <div id="willSee">Буду смотреть</div>
+                    <div id="rightPanel"
+                        class="d-flex justify-content-end text-white fw-bold fs-4 flex-grow-1">
+                        <div class="rounded" id="mark">9.2</div>
+                        <div class="rounded" id="willSee">Буду смотреть</div>
                     </div>
                 </div>
             </li>
             <hr>
-            <li><navPoster><img src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left"></navPoster>
-                <h2><a href="film.html">Зеленая миля</a></h2>
-                <div id="description">
+            <li class="text-white"><img class="poster" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
+                <h2 class="fs-5 fw-bold text-white"><a class= "text-white" href="film.html">Зеленая миля</a></h2>
+                <div id="description"
+                    class="d-flex justify-content-start align-items-center fs-6">
                     США, 1999 г.<br>
                     драма, криминал
-                    <div id="rightPanel">
-                        <div id="mark">9.2</div>
-                        <div id="willSee">Буду смотреть</div>
+                    <div id="rightPanel"
+                        class="d-flex justify-content-end text-white fw-bold fs-4 flex-grow-1">
+                        <div class="rounded" id="mark">9.2</div>
+                        <div class="rounded" id="willSee">Буду смотреть</div>
                     </div>
                 </div>
             </li>
             <hr>
         </ol>
     </div>
-    <footer>
+    <footer class="d-flex fixed-bottom align-items-center py-4 position-fixed fw-bold fs-4">
         2022 г.
-        <nav>
-            <a href="https://vk.com/id0" target="_blank"><navIcon><img src="images/vk.jpg" alt="VK"></navIcon> </a>
+        <nav class="d-flex justify-content-center flex-grow-1">
+            <a href="https://vk.com/id0" target="_blank"><img class="icon" src="images/vk.jpg" alt="VK"> </a>
         </nav>
     </footer>
 </body>
