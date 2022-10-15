@@ -1,0 +1,30 @@
+{
+  "name": "cinema",
+  "version": "1.0.0",
+  "description": "my first site",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 3000 ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bootstrap": "5.2.1",
+    "@fortawesome/fontawesome-free": "6.2.0"
+  },
+  "devDependencies": {
+    "http-server": "14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amayash/cinema.git"
+  },
+  "keywords": [
+    "cinema"
+  ],
+  "author": "b.darya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amayash/cinema/issues"
+  },
+  "homepage": "https://github.com/amayash/cinema#readme"
+}
