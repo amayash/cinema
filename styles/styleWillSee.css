@@ -3,15 +3,6 @@ body {
     background: #2b2d33;
 }
 
-h1 {
-    margin-inline-start: 1em;
-}
-
-h2 {
-    padding-top: 0.75em;
-    margin-inline-start: 5em;
-}
-
 h2 a {
     text-decoration: none;
 }
@@ -22,18 +13,15 @@ h2 a:hover {
 
 header {
     background: #1a1c20;
-    padding: 0.5em;
 }
 
 header a {
     color: #c2c2c2;
-    margin: 0 1.5em;
 }
 
 footer {
     background: #1a1c20;
     color: #c2c2c2;
-    padding: 0.5em 0.5em 0.5em 3em;
 }
 
 footer nav {
@@ -45,49 +33,32 @@ header a:hover {
 }
 
 #description {
-    margin-inline-start: 6.5em;
-    margin-top: -0.5em;
     color: #8f9398;
 }
 
 #mark {
-    padding: 0.5em;
-    margin: 0.5em;
     background-color: #38a65d;
+}
+
+
+#delete {
+    background-color: #e94049;
 }
 
 #content {
     background: #40444d;
-    padding: 1.25em 1.5em 0em 1.5em;
-    margin: 5em auto auto auto;
 }
 
 #content_header {
-    padding: 0.75em;
-    margin: -1.2em -1.5em 0em -1.5em;
+    margin: -1.5em -1.5em 0em -1.5em;
     background-color: #8f9297;
 }
 
 hr {
-    margin-right: 0.5em;
     height: 2px; /* Толщина линии */
 }
 
-button {
-    margin-left: 0.5em;
-    padding: 0;
-}
-
-#delete {
-    padding: 0.5em;
-    padding-right: 1em;
-    padding-left: 1em;
-    margin: 0.5em;
-    background-color: #e94049;
-}
-
 .poster{
-    padding-top: 0.75em;
     width: 90px;
     height: 120px;
 }
@@ -99,17 +70,17 @@ button {
 
 @media screen and (max-width: 840px) {
     .poster{
-        display: none;
-    }
-    h2 {
-        margin-inline-start: 0em;
+        width: 70px;
+        height: 100px;
     }
     #description {
-        margin-inline-start: 0.5em;
         font-size: small !important;
     }
     #rightPanel {
-        font-size: medium !important;
+        font-size: small !important;
+    }
+    #willSee {
+        padding: 2px;
     }
 }
     
