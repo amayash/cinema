@@ -45,6 +45,7 @@ header a:hover {
 }
 
 #content {
+    min-height: calc(100vh - 80px);
     background: #40444d;
 }
 

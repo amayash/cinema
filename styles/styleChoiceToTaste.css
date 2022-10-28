@@ -50,7 +50,7 @@ header a:hover {
 }
 
 #content {
-    min-height: calc(100vh - 236px);
+    min-height: calc(100vh - 80px);
     background: #40444d;
 }
 
@@ -72,14 +72,12 @@ header a:hover {
 @media screen and (max-width: 840px) {
     #description {
         font-size: x-large !important;
+        text-align: center;
     }
     #mark {
         top: 0;
     }
     h2 {
-        text-align: center;
-    }
-    #description {
         text-align: center;
     }
 }
