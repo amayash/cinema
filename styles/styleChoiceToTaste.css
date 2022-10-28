@@ -50,6 +50,7 @@ header a:hover {
 }
 
 #content {
+    min-height: calc(100vh - 236px);
     background: #40444d;
 }
 
@@ -80,5 +81,11 @@ header a:hover {
     }
     #description {
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .poster{
+        display: none;
     }
 }
