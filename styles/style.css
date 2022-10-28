@@ -8,6 +8,7 @@ h1 {
 }
 
 h2 {
+    padding-top: 0.75em;
     margin-inline-start: 5em;
 }
 
@@ -43,12 +44,7 @@ header a:hover {
     color: #ffffff;
 }
 
-#main {
-    margin-left: 1.5em;
-}
-
 #description {
-    padding-bottom: 1.5em;
     margin-inline-start: 6.5em;
     margin-top: -0.5em;
     color: #8f9398;
@@ -60,54 +56,37 @@ header a:hover {
     background-color: #38a65d;
 }
 
-#willSee {
-    padding: 0.5em;
-    margin: 0.5em;
-    background-color: #38a65d;
-}
-
 #content {
     background: #40444d;
-    height: 65%;
-    width: 80%;
     padding: 1.25em 1.5em 0em 1.5em;
     margin: 5em auto auto auto;
-    border: none;
-    border-radius: 40px;
 }
 
 #content_header {
-    padding: 1em;
-    margin: -1em -1.5em 0em -1.5em;
+    padding: 0.75em;
+    margin: -1.2em -1.5em 0em -1.5em;
     background-color: #8f9297;
-    border: none;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
 }
 
 hr {
-    border: none;
     margin-right: 0.5em;
     background-color: #1a1c20;
     height: 2px; /* Толщина линии */
 }
 
 button {
-    margin: 0.5em;
+    margin-left: 0.5em;
     padding: 0;
-    border: none;
-}
-button img { 
-    display: block;
 }
 
-form {
-    display: flex;
-    justify-content: start;
-    align-items: center;
+#willSee {
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #38a65d;
 }
 
 .poster{
+    padding-top: 0.75em;
     width: 90px;
     height: 120px;
 }
@@ -116,3 +95,20 @@ form {
     width: 50px; 
     height: 50px;
 }
+
+@media screen and (max-width: 768px) {
+    .poster{
+        display: none;
+    }
+    h2 {
+        margin-inline-start: 0em;
+    }
+    #description {
+        margin-inline-start: 0.5em;
+        font-size: small !important;
+    }
+    #rightPanel {
+        font-size: medium !important;
+    }
+}
+    

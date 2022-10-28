@@ -13,20 +13,31 @@
 </head>
 
 <body class="d-flex flex-column h-100 fs-6">
-    <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 align-items-center fs-4 fw-bold">
-        <div id="main"><a class="text-decoration-none" href="index.html">Главная</a></div>
-        <form action="searchSame.html">
-            <input type="text" name="text" class="search" placeholder="Введите название">
-            <button type="submit"><img class="icon" src="images/search.jpg" alt="Поиск" /></button>
-        </form>
-        <nav class="d-flex p-2 justify-content-end flex-grow-1">
-            <a class="text-decoration-none" href="choiceToTaste.html">Выбор по вкусу</a>
-            <a class="text-decoration-none" href="willSee.html">Буду смотреть</a>
+    <main class="flex-shrink-0">  
+    <header class="fs-4 fw-bold">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
+                    <div id="main"><a class="text-decoration-none" href="index.html">Главная</a></div>
+                    
+                    <form class="d-flex align-items-center" action="searchSame.html">
+                        <input type="text" name="text" class="form-control search rounded" placeholder="Введите название">
+                        <button type="submit" class="border border-0"><img class="icon" src="images/search.jpg" alt="Поиск" /></button>
+                    </form>
+                    <div class="d-flex justify-content-end flex-grow-1 navbar-nav">
+                        <a class="text-decoration-none" href="choiceToTaste.html">Выбор по вкусу</a>
+                        <a class="text-decoration-none" href="willSee.html">Буду смотреть</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
-    <div class="rounded-6" id="content">
-        <div id="content_header">
+    <div class="container rounded" id="content">
+        <div id="content_header" class="rounded-top">
             <h1 class="fs-1 fw-bold text-white">Топ 250 фильмов</h1>
         </div>
 
@@ -38,11 +49,12 @@
                     драма, криминал
                     <div id="rightPanel" class="d-flex justify-content-end text-white fw-bold fs-4 flex-grow-1">
                         <div class="rounded" id="mark">9.2</div>
-                        <div class="rounded" id="willSee">Буду смотреть</div>
+                        <button id="willSee" class="border border-0 rounded text-white fw-bold" type="button">Буду
+                            смотреть</button>
                     </div>
                 </div>
             </li>
-            <hr>
+            <hr class="border border-0">
             <li class="text-white"><img class="poster" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
                 <h2 class="fs-5 fw-bold text-white"><a class="text-white" href="film.html">Зеленая миля</a></h2>
                 <div id="description" class="d-flex justify-content-start align-items-center fs-6">
@@ -50,19 +62,21 @@
                     драма, криминал
                     <div id="rightPanel" class="d-flex justify-content-end text-white fw-bold fs-4 flex-grow-1">
                         <div class="rounded" id="mark">9.2</div>
-                        <div class="rounded" id="willSee">Буду смотреть</div>
+                        <button id="willSee" class="border border-0 rounded text-white fw-bold" type="button">Буду
+                            смотреть</button>
                     </div>
                 </div>
             </li>
-            <hr>
+            <hr class="border border-0">
         </ol>
     </div>
-    <footer class="d-flex fixed-bottom align-items-center py-4 position-fixed fw-bold fs-4">
+    <footer class="d-flex fixed-bottom align-items-center position-fixed fw-bold fs-4">
         2022 г.
         <nav class="d-flex justify-content-center flex-grow-1">
             <a href="https://vk.com/id0" target="_blank"><img class="icon" src="images/vk.jpg" alt="VK"> </a>
         </nav>
     </footer>
+</main>
 </body>
 
 </html>
