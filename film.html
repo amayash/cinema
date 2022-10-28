@@ -1,95 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница фильма</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/styleFilm.css">
 </head>
 
-<body>
-    <header>
-        <div id="main"><a href="index.html">Главная</a></div>
-        <form action="searchSame.html">
-            <input type="text" name="text" class="search" placeholder="Введите название">
-            <button type="submit"><nav2><img src="images/search.jpg" alt="Поиск" /></nav2></button>
-        </form>
-        <nav>
-            <a href="choiceToTaste.html">Выбор по вкусу</a>
-            <a href="willSee.html">Буду смотреть</a>
+<body class="d-flex flex-column h-100 fs-6">
+    <header class="fs-4 fw-bold p-1">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
+                    <div id="main"><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
+
+                    <form class="d-flex align-items-center" action="searchSame.html">
+                        <input type="text" name="text" class="form-control search rounded"
+                            placeholder="Введите название">
+                        <button type="submit" class="border border-0 p-0 ms-2"><img class="icon" src="images/search.jpg"
+                                alt="Поиск" /></button>
+                    </form>
+                    <div class="d-flex justify-content-end flex-grow-1 navbar-nav">
+                        <a class="text-decoration-none mx-3" href="choiceToTaste.html">Выбор по вкусу</a>
+                        <a class="text-decoration-none mx-3" href="willSee.html">Буду смотреть</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
-    <div id="content">
-        <div id="content_header">
-            <h1>Страница фильма</h1>
+    <div class="container rounded mt-5 p-4 text-center flex-wrap flex-grow-1" id="content">
+        <div id="content_header" class="rounded-top p-2">
+            <h1 class="fs-1 fw-bold text-white ms-5 text-start">Страница фильма</h1>
         </div>
-        <div id="poster">
-            <navPoster><img src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left"></navPoster>
-        </div>
-        <div id="paragraph">
-            <h2>Зеленая миля, 1999 г.</h2>
-            <div id="mark">9.2</div>
-            <div id="willSee">
-                <p>Буду смотреть</p>
+        <div class="pt-4">
+            <div id="poster">
+                <img class="poster img-fluid float-start me-3" src="images/zelenayamilya.jpg" alt="Зеленая миля"
+                    align="left">
+            </div>
+            <div class="d-flex contentArticle">
+                <h2 class="fs-1 fw-bold text-white text-start">Зеленая миля, 1999 г.</h2>
+                <div class="d-flex align-items-center">
+                    <div class="rounded p-1 mx-2 text-white fw-bold fs-4" id="mark">9.2</div>
+                    <button id="willSee" class="fs-4 p-1 mx-2 border border-0 rounded text-white fw-bold" type="button">Буду
+                        смотреть</button>
+                </div>
+            </div>
+            <table class="fs-4 text-start" cellspacing="0">
+                <tr>
+                    <td class="text-white fw-bold fs-2">О фильме</td>
+                </tr>
+                <tr>
+                    <td class="pe-2">Год производства</td>
+                    <td>
+                        1999
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pe-2">Страна</td>
+                    <td>
+                        США
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pe-2">Жанр</td>
+                    <td>
+                        драма, криминал
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pe-2">Длительность</td>
+                    <td>
+                        189 мин. / 03:09
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pe-2">Возраст</td>
+                    <td>
+                        16+
+                    </td>
+                </tr>
+            </table>
+            <h3 class="text-white fw-bold m-auto p-1 fs-2 text-start">Описание</h3>
+            <div class="d-flex justify-content-start align-items-center text-start fs-4" id="description">
+                Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого
+                однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и надзирателей
+                за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении, стал одним из самых
+                необычных обитателей блока.
             </div>
         </div>
+        <hr class="border border-0 bg-black">
 
-        <h3>О фильме</h3>
-        <table cellspacing="0">
-            <tr>
-                <td>Год производства</td>
-                <td>
-                    <p>1999</p>
-                </td>
-            </tr>
-            <tr>
-                <td>Страна</td>
-                <td>
-                    <p>США</p>
-                </td>
-            </tr>
-            <tr>
-                <td>Жанр</td>
-                <td>
-                    <p>драма, криминал</p>
-                </td>
-            </tr>
-            <tr>
-                <td>Длительность</td>
-                <td>
-                    <p>189 мин. / 03:09</p>
-                </td>
-            </tr>
-            <tr>
-                <td>Возраст</td>
-                <td>
-                    <p>16+</p>
-                </td>
-            </tr>
-        </table>
-        <h3>Описание</h3>
-        <div id="description">
-            Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого
-            однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и надзирателей
-            за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении, стал одним из самых
-            необычных обитателей блока.
-        </div>
-        <hr>
-
-        <h1>Трейлер</h1>
-        <nav><iframe src="https://www.youtube.com/embed/Ca3mUSDJlgM" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe></nav>
+        <h1 class="fs-1 fw-bold text-white ms-5 text-start">Трейлер</h1>
+        <nav><iframe class="img-fluid" src="https://www.youtube.com/embed/Ca3mUSDJlgM" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe></nav>
     </div>
-    <footer>
+    <!-- <footer class="d-flex fixed-bottom align-items-center fw-bold fs-4 p-2 ps-5">
         2022 г.
-        <nav>
-            <a href="https://vk.com/id0" target="_blank"><navIcon><img src="images/vk.jpg" alt="VK"></navIcon></a>
+        <nav class="d-flex justify-content-center flex-grow-1">
+            <a href="https://vk.com/id0" target="_blank"><img class="icon" src="images/vk.jpg" alt="VK"> </a>
         </nav>
-    </footer>
+    </footer> -->
 </body>
 
 </html>

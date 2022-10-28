@@ -32,6 +32,10 @@ header a:hover {
     color: #ffffff;
 }
 
+hr {
+    height: 2px; /* Толщина линии */
+}
+
 #description {
     color: #8f9398;
 }
@@ -52,10 +56,6 @@ header a:hover {
 #content_header {
     margin: -1.5em -1.5em 0em -1.5em;
     background-color: #8f9297;
-}
-
-hr {
-    height: 2px; /* Толщина линии */
 }
 
 .poster{
