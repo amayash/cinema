@@ -46,7 +46,7 @@ header a:hover {
 }
 
 #content {
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 236px);
     background: #40444d;
 }
 
@@ -70,6 +70,9 @@ hr {
 }
 
 @media screen and (max-width: 840px) {
+    #content h1 {
+        font-size: large !important;
+    }
     .poster{
         width: 70px;
         height: 100px;

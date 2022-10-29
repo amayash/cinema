@@ -51,12 +51,12 @@ hr {
 }
 
 #content {
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 236px);
     background: #40444d;
 }
 
 #content_header {
-    margin: -1.5em -1.5em 0em -1.5em;
+    margin: -1.5em -1.5em 0em -1.5em !important;
     background-color: #8f9297;
 }
 
@@ -68,26 +68,4 @@ hr {
 .icon {
     width: 50px; 
     height: 50px;
-}
-
-@media screen and (max-width: 840px) {
-    .poster{
-        width: 70px;
-        height: 100px;
-    }
-    #description {
-        font-size: small !important;
-    }
-    #rightPanel {
-        font-size: small !important;
-    }
-    #willSee {
-        padding: 2px;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .poster{
-        display: none;
-    }
 }
