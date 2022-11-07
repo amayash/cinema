@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Похожие результаты</title>
+    <title>Главная</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -22,10 +22,12 @@
                 </button>
                 <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
                     <div id="main"><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
-                    
+
                     <form class="d-flex align-items-center" action="searchSame.html">
-                        <input type="text" name="text" class="form-control search rounded" placeholder="Введите название">
-                        <button type="submit" class="border border-0 p-0 ms-2"><img class="icon" src="images/search.jpg" alt="Поиск" /></button>
+                        <input type="text" name="text" class="form-control search rounded"
+                            placeholder="Введите название">
+                        <button type="submit" class="border border-0 p-0 ms-2"><img class="icon" src="images/search.jpg"
+                                alt="Поиск" /></button>
                     </form>
                     <div class="d-flex justify-content-end flex-grow-1 navbar-nav">
                         <a class="text-decoration-none mx-3" href="choiceToTaste.html">Выбор по вкусу</a>
@@ -35,37 +37,43 @@
             </div>
         </nav>
     </header>
-    <div class="container rounded my-5 p-4" id="content">
-        <div id="content_header" class="rounded-top p-2">
+    <div class="container rounded my-5 p-4 content">
+        <div class="content_header rounded-top p-2">
             <h1 class="fs-1 fw-bold text-white ms-5">Похожие результаты</h1>
         </div>
 
-        <ol class="fs-5 text-white fw-bold">
-            <li><img class="poster pt-3 me-3" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
-                <h2 class="fs-5 fw-bold text-white pt-3"><a class="text-white" href="film.html">Зеленая миля</a></h2>
-                <div id="description" class="d-flex justify-content-start align-items-center mb-5 fs-6">
-                    США, 1999 г.<br>
-                    драма, криминал
+        <ol class="container-fluid col-xs-1 p-0 m-0 fs-5 ms-2 text-white fw-bold">
+            <li><img class="poster pt-3 me-3 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
+                <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">
+                    <div class="description d-flex flex-column justify-content-start align-items-center mb-5 fs-6">
+                        <h2 class="fs-5 fw-bold text-white pt-3"><a class="text-white" href="film.html">Зеленая миля</a></h2>
+                        США, 1999 г.<br>
+                        драма, криминал
+                    </div>
                     <div id="rightPanel" class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">
-                        <div class="rounded p-1 mx-2" id="mark">9.2</div>
-                        <button id="willSee" class="p-1 mx-2 border border-0 rounded text-white fw-bold" type="button">Буду
+                        <div class="rounded p-1 mx-2 green-mark">9.2</div>
+                        <button class="willSee p-1 mx-2 border border-0 rounded text-white fw-bold" type="button">Буду
                             смотреть</button>
                     </div>
                 </div>
             </li>
+
             <hr class="border border-0 bg-black">
-            <li><img class="poster pt-3 me-3" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
-                <h2 class="fs-5 fw-bold text-white pt-3"><a class="text-white" href="film.html">Зеленая миля</a></h2>
-                <div id="description" class="d-flex justify-content-start align-items-center mb-5 fs-6">
-                    США, 1999 г.<br>
-                    драма, криминал
+            <li><img class="poster pt-3 me-3 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
+                <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">
+                    <div class="description d-flex flex-column justify-content-start align-items-center mb-5 fs-6">
+                        <h2 class="fs-5 fw-bold text-white pt-3"><a class="text-white" href="film.html">Зеленая миля</a></h2>
+                        США, 1999 г.<br>
+                        драма, криминал
+                    </div>
                     <div id="rightPanel" class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">
-                        <div class="rounded p-1 mx-2" id="mark">9.2</div>
-                        <button id="willSee" class="p-1 mx-2 border border-0 rounded text-white fw-bold" type="button">Буду
+                        <div class="rounded p-1 mx-2 green-mark">9.2</div>
+                        <button class="willSee p-1 mx-2 border border-0 rounded text-white fw-bold" type="button">Буду
                             смотреть</button>
                     </div>
                 </div>
             </li>
+
             <hr class="border border-0 bg-black">
         </ol>
     </div>

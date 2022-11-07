@@ -20,6 +20,7 @@ header a {
 }
 
 footer {
+    flex: 0 0 auto !important;
     background: #1a1c20;
     color: #c2c2c2;
 }
@@ -32,31 +33,31 @@ header a:hover {
     color: #ffffff;
 }
 
-#description {
+hr {
+    height: 2px; /* Толщина линии */
+}
+
+.description {
     color: #8f9398;
 }
 
-#mark {
+.green-mark {
     background-color: #38a65d;
 }
 
 
-#willSee {
+.willSee {
     background-color: #38a65d;
 }
 
-#content {
+.content {
     min-height: calc(100vh - 236px);
     background: #40444d;
 }
 
-#content_header {
-    margin: -1.5em -1.5em 0em -1.5em;
+.content_header {
+    margin: -1.5em -1.5em 0em -1.5em !important;
     background-color: #8f9297;
-}
-
-hr {
-    height: 2px; /* Толщина линии */
 }
 
 .poster{
@@ -69,24 +70,8 @@ hr {
     height: 50px;
 }
 
-@media screen and (max-width: 840px) {
-    .poster{
-        width: 70px;
-        height: 100px;
-    }
-    #description {
-        font-size: small !important;
-    }
-    #rightPanel {
-        font-size: small !important;
-    }
-    #willSee {
-        padding: 2px;
-    }
-}
-  
-@media screen and (max-width: 300px) {
-    .poster{
-        display: none;
+@media screen and (max-width: 245px) {
+    .poster {
+        display: none !important;
     }
 }
