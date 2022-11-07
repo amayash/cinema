@@ -71,20 +71,7 @@ hr {
 }
 
 @media screen and (max-width: 245px) {
-    .green-mark {
-        font-size: small !important;
-    }
-    .willSee {
-        font-size: small !important;
-    }
-    h2 a {
-        font-size: small !important;
-    }
-    .description {
-        font-size: small !important;
-    }
-    .fs-1 {
-        margin-left: 1rem !important;
-        font-size: medium !important;
+    .poster {
+        display: none !important;
     }
 }
