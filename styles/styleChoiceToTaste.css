@@ -51,7 +51,7 @@ header a:hover {
 }
 
 .content {
-    min-height: calc(100vh - 236px);
+    min-height: calc(100vh - 25.1vh);
     background: #40444d;
 }
 

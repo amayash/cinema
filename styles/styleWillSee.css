@@ -54,7 +54,7 @@ hr {
 }
 
 .content {
-    min-height: calc(100vh - 14.75em);
+    min-height: calc(100vh - 25.1vh);
     background: #40444d;
 }
 
