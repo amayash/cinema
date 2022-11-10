@@ -1,101 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Выбор по вкусу</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="styles/styleChoiceToTaste.css">
-    </head>
-    
-    <body class="d-flex flex-column h-100 fs-6">
-        <header class="fs-4 fw-bold p-1">
-            <nav class="navbar navbar-expand-md navbar-dark">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
-                        <div id="main"><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
-                        
-                        <form class="d-flex align-items-center" action="searchSame.html">
-                            <input type="text" name="text" class="form-control search rounded" placeholder="Введите название">
-                            <button type="submit" class="border border-0 p-0 ms-2"><img class="icon" src="images/search.jpg" alt="Поиск" /></button>
-                        </form>
-                        <div class="d-flex justify-content-end flex-grow-1 navbar-nav">
-                            <a class="text-decoration-none mx-3" href="choiceToTaste.html">Выбор по вкусу</a>
-                            <a class="text-decoration-none mx-3" href="willSee.html">Буду смотреть</a>
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Выбор по вкусу</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styleChoiceToTaste.css">
+</head>
+
+<body class="d-flex flex-column h-100 fs-6">
+    <header class="fs-4 fw-bold p-1">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
+                    <div id="main"><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
+
+                    <form class="d-flex align-items-center" action="searchSame.html">
+                        <input type="text" name="text" class="form-control search rounded"
+                            placeholder="Введите название">
+                        <button type="submit" class="border border-0 p-0 ms-2"><img class="icon" src="images/search.jpg"
+                                alt="Поиск" /></button>
+                    </form>
+                    <div class="d-flex justify-content-end flex-grow-1 navbar-nav">
+                        <a class="text-decoration-none mx-3" href="choiceToTaste.html">Выбор по вкусу</a>
+                        <a class="text-decoration-none mx-3" href="willSee.html">Буду смотреть</a>
                     </div>
                 </div>
-            </nav>
-        </header>
-    <div class="container rounded my-5 p-4 flex-wrap align-items-center" id="content">
-        <div id="content_header" class="d-flex flex-wrap justify-content-around rounded-top p-2">
-            <form class="d-flex gap-2 flex-wrap justify-content-start align-items-center">
-                <div class="d-flex align-items-center">
-                <h1 class="fw-bold text-white me-2">Жанр:</h1>
-                <select name="genre">
-                    <option value="0">Комедия</option>
-                    <option value="1">Фантастика</option>
-                    <option value="2">Ужасы</option>
-                    <option value="3">Боевик</option>
-                    <option value="4">Мелодрама</option>
-                    <option value="5">Мистика</option>
-                    <option value="6">Детектив</option>
-                    <option value="7">Военное кино</option>
-                    <option value="8">Фильм-катастрофа</option>
-                </select></div>
-                <div class="d-flex align-items-center">
-                <h1 class="fw-bold text-white me-2"><label for="year">Год:</label></h1>
-                <input type="number" step="1" min="1900" max="2022" value="2020" id="year" name="year" /></div>
-                <div class="d-flex align-items-center">
-                <h1 class="fw-bold text-white me-2">Страна:</h1>
-                <select name="country">
-                    <option value="0">США</option>
-                    <option value="1">Франция</option>
-                    <option value="2">Великобритания</option>
-                    <option value="3">Южная Корея</option>
-                    <option value="4">Россия</option>
-                    <option value="5">Япония</option>
-                    <option value="6">Италия</option>
-                    <option value="7">Испания</option>
-                    <option value="8">Германия</option>
-                    <option value="9">Турция</option>
-                    <option value="10">Швеция</option>
-                </select></div>
-                <button type="submit" class="border border-0 p-0"><img class="icon" src="images/search.png" alt="Поиск" /></button>
-            </form>
-        </div>
-        <div class="mt-3">
-        <div>
-            <img class="poster me-4 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
-        </div">
-        <h2 class="fw-bold fs-2"><a class="text-white" href="film.html">Зеленая миля, 1999 г.</a></h2>
-        <div id="description" class="lh-sm d-flex fs-2 mt-1 justify-content-start align-items-center">
-            Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого 
-            однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и надзирателей
-            за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении, стал одним из самых 
-            необычных обитателей блока.
-            <div class="rounded p-1 text-white fw-bold position-relative" id="mark">9.2</div>
-        </div>
-        <div class="d-flex text-white fs-3 fw-bold justify-content-between">
-            <button id="nextFilm" class="d-flex justify-content-center flex-grow-1 py-1 mt-5 mx-1 border border-0 rounded text-white fw-bold" type="button">
-                Следующий фильм
-            </button>
-            <button id="willSee" class="d-flex justify-content-center flex-grow-1 py-1 mt-5 mx-1 border border-0 rounded text-white fw-bold" type="button">
-                Буду смотреть
-            </button>
+            </div>
+        </nav>
+    </header>
+    <div class="container rounded my-5 flex-wrap content">
+        <div class="container-fluid">
+            <div class="content_header d-flex flex-wrap justify-content-around rounded-top p-2">
+                <form class="d-flex gap-2 flex-wrap justify-content-start align-items-center">
+                    <div class="d-flex align-items-center">
+                        <h1 class="fw-bold text-white me-2">Жанр:</h1>
+                        <select name="genre">
+                            <option value="0">Комедия</option>
+                            <option value="1">Фантастика</option>
+                            <option value="2">Ужасы</option>
+                            <option value="3">Боевик</option>
+                            <option value="4">Мелодрама</option>
+                            <option value="5">Мистика</option>
+                            <option value="6">Детектив</option>
+                            <option value="7">Военное кино</option>
+                            <option value="8">Фильм-катастрофа</option>
+                        </select>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <h1 class="fw-bold text-white me-2"><label for="year">Год:</label></h1>
+                        <input type="number" step="1" min="1900" max="2022" value="2020" id="year" name="year" />
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <h1 class="fw-bold text-white me-2">Страна:</h1>
+                        <select name="country">
+                            <option value="0">США</option>
+                            <option value="1">Франция</option>
+                            <option value="2">Великобритания</option>
+                            <option value="3">Южная Корея</option>
+                            <option value="4">Россия</option>
+                            <option value="5">Япония</option>
+                            <option value="6">Италия</option>
+                            <option value="7">Испания</option>
+                            <option value="8">Германия</option>
+                            <option value="9">Турция</option>
+                            <option value="10">Швеция</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="border border-0 p-0"><img class="icon" src="images/search.png"
+                            alt="Поиск" /></button>
+                </form>
+            </div>
+            <div class="mt-5 container-fluid">
+                <img class="poster me-4 img-fluid float-start" src="images/zelenayamilya.jpg" alt="Зеленая миля"
+                    align="left">
+                
+                <div class="text-wrap description lh-sm fs-1 mt-1">
+                    <div class="d-flex align-items-center">
+                        <h2 class="fw-bold fs-2 text-wrap"><a class="text-white" href="film.html">Зеленая миля, 1999 г.</a></h2>
+                        <div class="badge p-1 text-white fw-bold mark ms-3 fs-5 text-wrap">9.2</div>
+                    </div>
+                    Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого
+                    однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и
+                    надзирателей
+                    за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении, стал одним из
+                    самых
+                    необычных обитателей блока.
+                </div>
+                <div class="d-flex text-white fs-3 fw-bold justify-content-between">
+                    <button
+                        class="nextFilm d-flex justify-content-center flex-grow-1 py-1 mt-5 mx-1 border border-0 rounded text-white fw-bold"
+                        type="button">
+                        Следующий фильм
+                    </button>
+                    <button
+                        class="willSee d-flex justify-content-center flex-grow-1 py-1 mt-5 mx-1 border border-0 rounded text-white fw-bold"
+                        type="button">
+                        Буду смотреть
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-</div>
-    
+
     <footer class="d-flex align-items-center fw-bold fs-4 p-2 ps-5">
         2022 г.
         <nav class="d-flex justify-content-center flex-grow-1">

@@ -32,29 +32,28 @@ header a:hover {
     color: #ffffff;
 }
 
-#description {
+.description {
     color: #8f9398;
 }
 
-#mark {
-    top: -5em;
+.mark {
     background-color: #38a65d;
 }
 
-#nextFilm {
+.nextFilm {
     background-color: #e94049;
 }
 
-#willSee {
+.willSee {
     background-color: #38a65d;
 }
 
-#content {
+.content {
     min-height: calc(100vh - 236px);
     background: #40444d;
 }
 
-#content_header {
+.content_header {
     margin: -1.5em -1.5em 0em -1.5em;
     background-color: #8f9297;
 }
@@ -69,21 +68,8 @@ header a:hover {
     height: 50px;
 }
 
-@media screen and (max-width: 840px) {
-    #description {
-        font-size: x-large !important;
-        text-align: center;
-    }
-    #mark {
-        top: 0;
-    }
-    h2 {
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .poster{
-        display: none;
-    }
+@media screen and (max-width: 760px) {
+    /* .poster {
+        float: top !important;
+    } */
 }
