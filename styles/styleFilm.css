@@ -16,11 +16,11 @@ footer nav {
     color: #c2c2c2;
 }
 
-h2 a {
+a {
     text-decoration: none;
 }
 
-h2 a:hover {
+a:hover {
     text-decoration: underline;
 }
 
@@ -32,24 +32,28 @@ header a:hover {
     color: #ffffff;
 }
 
-#description {
+.description {
     color: #8f9398;
 }
 
-#mark {
+.green-mark {
+    max-width: 50px !important;
+    min-width: 50px;
     background-color: #38a65d;
 }
 
-#willSee {
+.willSee {
+    max-width: 160px !important;
+    min-width: 160px;
     background-color: #38a65d;
 }
 
-#content {
+.content {
     min-height: calc(100vh - 236px);
     background: #40444d;
 }
 
-#content_header {
+.content_header {
     margin: -1.5em -1.5em 0em -1.5em;
     background-color: #8f9297;
 }
@@ -58,7 +62,7 @@ hr {
     height: 2px; /* Толщина линии */
 }
 
-TABLE {
+.table {
     color: #8f9398;
 }
 
@@ -70,24 +74,4 @@ TABLE {
 .icon {
     width: 50px; 
     height: 50px;
-}
-
-nav iframe {
-    width: 860px;
-    height: 515px;
-}
-
-@media screen and (min-width: 840px) {
-    nav iframe {
-        height: 515px !important;
-    }
-}
-
-@media screen and (max-width: 840px) {
-    .contentArticle {
-        display: block !important;
-    }
-    .fs-4 {
-        font-size: 1em !important;
-    }
 }

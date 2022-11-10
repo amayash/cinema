@@ -22,7 +22,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
-                    <div id="main"><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
+                    <div><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
 
                     <form class="d-flex align-items-center" action="searchSame.html">
                         <input type="text" name="text" class="form-control search rounded"
@@ -38,60 +38,44 @@
             </div>
         </nav>
     </header>
-    <div class="container rounded my-5 p-4 text-center flex-wrap flex-grow-1" id="content">
-        <div id="content_header" class="rounded-top p-2">
-            <h1 class="fs-1 fw-bold text-white ms-5 text-start">Страница фильма</h1>
+    <div class="content container rounded my-5 p-4 text-center flex-wrap flex-grow-1">
+        <div class="content_header rounded-top p-2">
+            <h1 class="fw-bold text-white ms-5 text-start">Страница фильма</h1>
         </div>
-        <div class="pt-4">
-            <div id="poster">
-                <img class="poster img-fluid float-start me-3" src="images/zelenayamilya.jpg" alt="Зеленая миля"
+        <div class="container pt-4">
+            <div class="container d-block text-start">
+                <img class="row poster img-fluid float-start me-3 mt-3" src="images/zelenayamilya.jpg" alt="Зеленая миля"
                     align="left">
+                <a class="col text-white fw-bold fs-2" href="film.html">Зеленая миля, 1999 г.</a>
+                <span class="col badge green-mark text-white fw-bold fs-5 mx-2 p-2">9.2</span>
+                <button class="col badge willSee text-white fw-bold fs-5 mx-2 p-2 border border-0">Буду смотреть</button>
             </div>
-            <div class="d-flex contentArticle">
-                <h2 class="fs-1 fw-bold text-white text-start">Зеленая миля, 1999 г.</h2>
-                <div class="d-flex align-items-center">
-                    <div class="rounded p-1 mx-2 text-white fw-bold fs-4" id="mark">9.2</div>
-                    <button id="willSee" class="fs-4 p-1 mx-2 border border-0 rounded text-white fw-bold" type="button">Буду
-                        смотреть</button>
+            <div class="container table text-start fs-4">
+                <div class="row text-white fw-bold fs-3">О фильме</div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Год производства</div>
+                    <div class="col-xs-6 col-sm-3">1999</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Страна</div>
+                    <div class="col-xs-6 col-sm-3">США</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Жанр</div>
+                    <div class="col-xs-6 col-sm-3">драма, криминал</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Длительность</div>
+                    <div class="col-xs-6 col-sm-3">189 мин. / 03:09</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Возраст</div>
+                    <div class="col-xs-6 col-sm-3">16+</div>
                 </div>
             </div>
-            <table class="fs-4 text-start" cellspacing="0">
-                <tr>
-                    <td class="text-white fw-bold fs-2">О фильме</td>
-                </tr>
-                <tr>
-                    <td class="pe-2">Год производства</td>
-                    <td>
-                        1999
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pe-2">Страна</td>
-                    <td>
-                        США
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pe-2">Жанр</td>
-                    <td>
-                        драма, криминал
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pe-2">Длительность</td>
-                    <td>
-                        189 мин. / 03:09
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pe-2">Возраст</td>
-                    <td>
-                        16+
-                    </td>
-                </tr>
-            </table>
-            <h3 class="text-white fw-bold m-auto p-1 fs-2 text-start">Описание</h3>
-            <div class="d-flex justify-content-start align-items-center text-start fs-4" id="description">
+            
+            <h3 class="text-white fw-bold m-auto p-1 fs-3 text-start">Описание</h3>
+            <div class="description text-start fs-4">
                 Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого
                 однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и надзирателей
                 за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении, стал одним из самых
@@ -99,12 +83,15 @@
             </div>
         </div>
         <hr class="border border-0 bg-black">
-
-        <h1 class="fs-1 fw-bold text-white ms-5 text-start">Трейлер</h1>
-        <nav><iframe class="img-fluid" src="https://www.youtube.com/embed/Ca3mUSDJlgM" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe></nav>
+        <div class="container">
+            <h1 class="fs-1 fw-bold text-white ms-2 text-start">Трейлер</h1>
+            <nav class="ratio ratio-16x9">
+                <iframe class="p-2" src="https://www.youtube.com/embed/Ca3mUSDJlgM" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </nav>
+        </div>
     </div>
     <footer class="d-flex align-items-center fw-bold fs-4 p-2 ps-5">
         2022 г.
