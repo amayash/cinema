@@ -51,8 +51,9 @@ hr {
 }
 
 .content {
-    min-height: calc(100vh - 14.75em);
+    min-height: calc(100vh - 236px);
     background: #40444d;
+    display: block;
 }
 
 .content_header {
@@ -75,6 +76,6 @@ hr {
         display: none !important;
     }
     .fs-1 {
-        margin-left: 1rem !important;
+        margin-left: 1em !important;
     }
 }
