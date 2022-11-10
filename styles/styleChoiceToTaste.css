@@ -3,11 +3,11 @@ body {
     background: #2b2d33;
 }
 
-h2 a {
+a {
     text-decoration: none;
 }
 
-h2 a:hover {
+a:hover {
     text-decoration: underline;
 }
 
@@ -37,6 +37,8 @@ header a:hover {
 }
 
 .mark {
+    width: 50px;
+    min-width: 50px;
     background-color: #38a65d;
 }
 
@@ -68,8 +70,8 @@ header a:hover {
     height: 50px;
 }
 
-@media screen and (max-width: 760px) {
-    /* .poster {
-        float: top !important;
-    } */
+@media screen and (max-width: 250px) {
+    .fs-2 {
+        font-size: medium !important;
+    }
 }
