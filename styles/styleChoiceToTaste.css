@@ -82,4 +82,7 @@ button {
     .fs-2 {
         font-size: medium !important;
     }
+    .fs-1 {
+        font-size: large !important;
+    }
 }

@@ -21,7 +21,7 @@ function addItemToTable(name, country, year, genre) {
     const id = 'item-' + Date.now();
 
     const tableHtml = 
-    '<tr id="' + id + '"><img class="poster me-3 img-fluid" src="'+document.getElementById("tempPicture").src+'" alt="'+name+'" align="left">\
+    '<tr id="' + id + '"><td><img class="poster me-3 img-fluid" src="'+document.getElementById("tempPicture").src+'" alt="'+name+'" align="left">\
     <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">\
         <div class="pt-3 description d-flex flex-column justify-content-start align-items-center mb-3 fs-6 fw-bold">\
             <p class="text-start description">\
@@ -31,10 +31,11 @@ function addItemToTable(name, country, year, genre) {
             <div id="rightPanel"\
 			class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">\
 			<div class="rounded p-1 mx-2 green-mark">9.2</div>\
-			<a href=# onclick="removeItemFromTable(\''+ id +'\')"><i class="fa-solid fa-trash"></i></a>\
+			<a href=# onclick="removeItemFromTable(\''+ id +'\')"><button class="delete p-1 px-2 mx-2 border border-0 rounded text-white fw-bold"\
+            type="button">Убрать</button></a>\
 		</div>\
     </div>' +
-    '</tr><hr class="border border-0 bg-black">';
+    '<hr class="border border-0 bg-black"></td></tr>';
 
     table.innerHTML += tableHtml;
 
@@ -44,16 +45,16 @@ function addItemToTable(name, country, year, genre) {
 function removeItemFromTable(id) {
     console.info('Try to remove item');
 
-    if (!confirm('Do you really want to remove this item?')) {
+    if (!confirm(`Вы действительно хотите удалить фильм из списка запланированных?`)) {
         console.info('Canceled');
         return;
     }
 
-    const item = document.querySelector('#' + id);
-    if (item == null) {
+    const temp = document.querySelector('#' + id);
+    if (temp == null) {
         throw 'Item with id [' + id + '] is not found';
     }
-    item.remove();
+    temp.remove();
 
     const numbers = document.querySelectorAll("#tbl-items tbody tr th");
     for (let i = 0; i < numbers.length; i++) {
@@ -72,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
             console.info('Form onsubmit');
             event.preventDefault();
 
-            const pic = document.querySelector("#filmPicture");
-            if (pic == null) {
-                throw 'Pic control is not found';
+            const picture = document.querySelector("#filmPicture");
+            if (picture == null) {
+                throw 'picture control is not found';
             }
 
             const name = document.querySelector("#filmName");
@@ -84,22 +85,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const country = document.querySelector("#filmCountry");
             if (country == null) {
-                throw 'desc control is not found';
+                throw 'country control is not found';
             }
 
             const year = document.querySelector("#filmYear");
             if (year == null) {
-                throw 'name control is not found';
+                throw 'year control is not found';
             }
 
             const genre = document.querySelector("#filmGenre");
             if (genre == null) {
-                throw 'name control is not found';
+                throw 'genre control is not found';
             }
 
-            addItemToTable(name.value, country.value,parseInt(year.value),genre.value);
+            addItemToTable(name.value, country.value, parseInt(year.value), genre.value);
 
-            pic.value = '';
+            picture.value='';
             name.value = '';
             country.value = '';
             year.value = 1900;

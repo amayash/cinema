@@ -33,10 +33,6 @@ header a:hover {
     color: #ffffff;
 }
 
-hr {
-    height: 2px; /* Толщина линии */
-}
-
 .description {
     color: #8f9398;
 }
@@ -83,6 +79,14 @@ input {
 
 button {
     background: #1a1c20;
+}
+
+hr {
+    height: 2px; /* Толщина линии */
+}
+
+table tbody tr td {
+    border: 0px !important;
 }
 
 @media screen and (max-width: 290px) {
