@@ -70,6 +70,14 @@ header a:hover {
     height: 50px;
 }
 
+input {
+    max-width: 200px;
+}
+
+button {
+    background: #1a1c20;
+}
+
 @media screen and (max-width: 250px) {
     .fs-2 {
         font-size: medium !important;
