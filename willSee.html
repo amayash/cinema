@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title>Буду смотреть</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -24,8 +24,8 @@
                     <div id="main"><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
 
                     <form class="col d-flex align-items-center needs-validation" novalidate>
-                        <input type="text" class="form-control" id="validationCustom01"
-                            name="text"  search rounded required placeholder="Введите название">
+                        <input type="text" class="form-control" id="validationCustom01" name="text" search rounded
+                            required placeholder="Введите название">
                         <button type="submit" class="border border-0 p-0 ms-2"><img class="icon" src="images/search.jpg"
                                 alt="Поиск" /></button>
                     </form>
@@ -42,39 +42,42 @@
             <h1 class="fs-1 fw-bold text-white ms-5">Список запланированных</h1>
         </div>
 
-        <ol class="container-fluid col-xs-1 p-0 m-0 fs-5 ms-2 text-white fw-bold">
-            <li><img class="poster pt-3 me-3 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
-                <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">
-                    <div class="description d-flex flex-column justify-content-start align-items-center mb-5 fs-6">
-                        <h2 class="fs-5 fw-bold text-white pt-3"><a class="text-white" href="film.html">Зеленая миля</a></h2>
-                        США, 1999 г.<br>
-                        драма, криминал
-                    </div>
-                    <div id="rightPanel" class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">
-                        <div class="rounded p-1 mx-2 green-mark">9.2</div>
-                        <button class="delete p-1 px-2 mx-2 border border-0 rounded text-white fw-bold" type="button">Убрать</button>
-                    
-                    </div>
-                </div>
-            </li>
+        <form id="frm-items" class="row g-3 fs-4 description fw-bold">
+            <div class="col-md-3">
+                <label for="filmPicture" class="form-label">Изображение</label>
+                <input type="file" class="form-control" id="filmPicture" value="" required>
+            </div>
+            <div class="col-md-2">
+                <label for="filmName" class="form-label">Название</label>
+                <input type="text" class="form-control" id="filmName" value="" placeholder="Введите название" required>
+            </div>
+            <div class="col-md-2">
+                <label for="filmCountry" class="form-label">Страна</label>
+                <input type="text" class="form-control" id="filmCountry" value="" placeholder="Введите страну" required>
+            </div>
+            <div class="col-md-2">
+                <label for="filmYear" class="form-label">Год</label>
+                <input type="number" class="form-control" id="filmYear" value="1900" min="1900" step="1" placeholder="Введите год" required>
+            </div>
+            <div class="col-md-2">
+                <label for="filmGenre" class="form-label">Жанр</label>
+                <input type="text" class="form-control" id="filmGenre" value="" placeholder="Введите жанр" required>
+            </div>
+            <div class="col-12">
+                <button id="btn-add-item" class="willSee p-1 border border-0 rounded text-white fw-bold fs-4"
+                    type="submit">Добавить</button>
+            </div>
+            <img src="" id="tempPicture" style="display: none;">
+        </form>
+        <hr class="border border-0 bg-black">
 
-            <hr class="border border-0 bg-black">
-            <li><img class="poster pt-3 me-3 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
-                <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">
-                    <div class="description d-flex flex-column justify-content-start align-items-center mb-5 fs-6">
-                        <h2 class="fs-5 fw-bold text-white pt-3"><a class="text-white" href="film.html">Зеленая миля</a></h2>
-                        США, 1999 г.<br>
-                        драма, криминал
-                    </div>
-                    <div id="rightPanel" class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">
-                        <div class="rounded p-1 mx-2 green-mark">9.2</div>
-                        <button class="delete p-1 px-2 mx-2 border border-0 rounded text-white fw-bold" type="button">Убрать</button>
-                    </div>
-                </div>
-            </li>
+        <table id="tbl-items" class="table">
+            <tbody>
+                
+            </tbody>
+        </table>
 
-            <hr class="border border-0 bg-black">
-        </ol>
+
     </div>
     <footer class="d-flex align-items-center fw-bold fs-4 p-2 ps-5">
         2022 г.
@@ -82,8 +85,9 @@
             <a href="https://vk.com/id0" target="_blank"><img class="icon" src="images/vk.jpg" alt="VK"> </a>
         </nav>
     </footer>
-    
+
     <script src="js/searchMain.js"></script>
+    <script src="js/addFilmToWillSee.js"></script>
 </body>
 
-</html>                   
+</html>
