@@ -4,13 +4,13 @@
 document.querySelector("#filmPicture").addEventListener("change", function() {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
-      const uploaded_image = reader.result;
-      document.querySelector("#tempPicture").src = uploaded_image;
+        const uploaded_image = reader.result;
+        document.querySelector("#tempPicture").src = uploaded_image;
     });
     reader.readAsDataURL(this.files[0]);
-  });
+});
 
-function addItemToTable(image, name, country, year, genre) {
+function addItemToTable(name, country, year, genre) {
     console.info('Try to add item');
 
     const table = document.querySelector("#tbl-items tbody");
@@ -18,8 +18,10 @@ function addItemToTable(image, name, country, year, genre) {
         throw 'Table is not found';
     }
 
+    const id = 'item-' + Date.now();
+
     const tableHtml = 
-    '<tr><img class="poster me-3 img-fluid" src="'+document.getElementById("tempPicture").src+'" alt="'+name+'" align="left">\
+    '<tr id="' + id + '"><img class="poster me-3 img-fluid" src="'+document.getElementById("tempPicture").src+'" alt="'+name+'" align="left">\
     <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">\
         <div class="pt-3 description d-flex flex-column justify-content-start align-items-center mb-3 fs-6 fw-bold">\
             <p class="text-start description">\
@@ -29,8 +31,7 @@ function addItemToTable(image, name, country, year, genre) {
             <div id="rightPanel"\
 			class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">\
 			<div class="rounded p-1 mx-2 green-mark">9.2</div>\
-			<button class="delete p-1 px-2 mx-2 border border-0 rounded text-white fw-bold"\
-				type="button">Убрать</button>\
+			<a href=# onclick="removeItemFromTable(\''+ id +'\')"><i class="fa-solid fa-trash"></i></a>\
 		</div>\
     </div>' +
     '</tr><hr class="border border-0 bg-black">';
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw 'name control is not found';
             }
 
-            addItemToTable(pic.value, name.value, country.value,parseInt(year.value),genre.value);
+            addItemToTable(name.value, country.value,parseInt(year.value),genre.value);
 
             pic.value = '';
             name.value = '';

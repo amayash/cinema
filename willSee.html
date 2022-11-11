@@ -47,23 +47,56 @@
                 <label for="filmPicture" class="form-label">Изображение</label>
                 <input type="file" class="form-control" id="filmPicture" value="" required>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <label for="filmName" class="form-label">Название</label>
                 <input type="text" class="form-control" id="filmName" value="" placeholder="Введите название" required>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <label for="filmCountry" class="form-label">Страна</label>
-                <input type="text" class="form-control" id="filmCountry" value="" placeholder="Введите страну" required>
+                <select class="form-select" id="filmCountry" required>
+                    <option selected disabled value="">Выберите страну</option>
+                    <option value="0">США</option>
+                    <option value="1">Франция</option>
+                    <option value="2">Великобритания</option>
+                    <option value="3">Южная Корея</option>
+                    <option value="4">Россия</option>
+                    <option value="5">Япония</option>
+                    <option value="6">Италия</option>
+                    <option value="7">Испания</option>
+                    <option value="8">Германия</option>
+                    <option value="9">Турция</option>
+                    <option value="10">Швеция</option>
+                </select>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <label for="filmYear" class="form-label">Год</label>
-                <input type="number" class="form-control" id="filmYear" value="1900" min="1900" step="1" placeholder="Введите год" required>
+                <input type="number" class="form-control" id="filmYear" value="1900" min="1900" max="2022" step="1" placeholder="Введите год" required>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <label for="filmGenre" class="form-label">Жанр</label>
-                <input type="text" class="form-control" id="filmGenre" value="" placeholder="Введите жанр" required>
+                <select class="form-select" id="filmGenre" required>
+                    <option selected disabled value="">Выберите жанр</option>
+                    <option value="0">Комедия</option>
+                    <option value="1">Фантастика</option>
+                    <option value="2">Ужасы</option>
+                    <option value="3">Боевик</option>
+                    <option value="4">Мелодрама</option>
+                    <option value="5">Мистика</option>
+                    <option value="6">Детектив</option>
+                    <option value="7">Военное кино</option>
+                    <option value="8">Фильм-катастрофа</option>
+                </select>
             </div>
-            <div class="col-12">
+            <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Мне уже есть 16 лет
+                </label>
+                <div class="invalid-feedback">
+                    Подтвердите, что вам уже есть 16 лет
+                </div>
+            </div>
+            <div class="text-start">
                 <button id="btn-add-item" class="willSee p-1 border border-0 rounded text-white fw-bold fs-4"
                     type="submit">Добавить</button>
             </div>
@@ -73,7 +106,7 @@
 
         <table id="tbl-items" class="table">
             <tbody>
-                
+
             </tbody>
         </table>
 
