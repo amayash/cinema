@@ -1,8 +1,5 @@
 #banner {
     margin: 15px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     min-height: 400px;
 }
 
@@ -12,7 +9,7 @@
 
 #banner img.show {
     height: 400px;
-    width: 90%;
+    width: 80%;
     opacity: 1;
     transition: opacity 1s, visibility 0s;
 }
