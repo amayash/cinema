@@ -42,7 +42,7 @@
             <h1 class="fs-1 fw-bold text-white ms-5">Список запланированных</h1>
         </div>
 
-        <form id="frm-items" class="row g-3 fs-4 description fw-bold">
+        <form id="frm-items" class="row g-3 fs-4 description fw-bold needs-validation-content" onsubmit="return false;" novalidate>
             <div class="col-md-3">
                 <label for="filmPicture" class="form-label">Изображение</label>
                 <input type="file" class="form-control" id="filmPicture" value="" required>
@@ -88,8 +88,8 @@
                 </select>
             </div>
             <div class="form-check mx-2">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
+                <input class="form-check-input" value="" type="checkbox" id="film16" required>
+                <label class="form-check-label" for="film16">
                     Мне уже есть 16 лет
                 </label>
                 <div class="invalid-feedback">

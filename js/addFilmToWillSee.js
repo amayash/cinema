@@ -64,47 +64,74 @@ function removeItemFromTable(id) {
     console.info('Removed');
 }
 
-document.addEventListener('DOMContentLoaded', function () { 
+document.addEventListener('DOMContentLoaded', function (myevent) { 
     console.info('Loaded');
 
     const form = document.querySelector("#frm-items");
+
     if (form !== null) {
-        form.addEventListener('submit', function(event) {
-            console.info('Form onsubmit');
-            event.preventDefault();
+        const forms = document.querySelectorAll('.needs-validation-content');
 
-            const picture = document.querySelector("#filmPicture");
-            if (picture == null) {
-                throw 'picture control is not found';
-            }
+        // Loop over them and prevent submission
+        for (let i = 0; i < forms.length; i++) {
+            const form = forms[i];
+            form.addEventListener('submit', function() {
+                if (!form.checkValidity()) {
+                    console.info('start check validation content');
+                    myevent.preventDefault();
+                    myevent.stopPropagation();
+                }
+                form.classList.add('was-validated');
 
-            const name = document.querySelector("#filmName");
-            if (name == null) {
-                throw 'name control is not found';
-            }
+                console.info('Form onsubmit');
 
-            const country = document.querySelector("#filmCountry");
-            if (country == null) {
-                throw 'country control is not found';
-            }
+                myevent.preventDefault();
 
-            const year = document.querySelector("#filmYear");
-            if (year == null) {
-                throw 'year control is not found';
-            }
+                const picture = document.querySelector("#filmPicture");
+                if (picture == null) {
+                    throw 'picture control is not found';
+                }
 
-            const genre = document.querySelector("#filmGenre");
-            if (genre == null) {
-                throw 'genre control is not found';
-            }
+                const name = document.querySelector("#filmName");
 
-            addItemToTable(name.value, country.value, parseInt(year.value), genre.value);
+                if (name == null || name.value=="") {
+                    throw 'exc';
+                }
 
-            picture.value='';
-            name.value = '';
-            country.value = '';
-            year.value = 1900;
-            genre.value = '';
-        });
+                const country = document.querySelector("#filmCountry");
+                if (country == null || country.value=="") {
+                    throw 'country control is not found';
+                }
+
+                const year = document.querySelector("#filmYear");
+                if (year == null) {
+                    throw 'year control is not found';
+                }
+
+                const genre = document.querySelector("#filmGenre");
+                if (genre == null || genre.value=="") {
+                    throw 'genre control is not found';
+                }
+
+                
+                const age = document.querySelector("#film16");
+                console.info(age.value);
+                console.info(age.checked);
+                if (age == null || !age.checked) {
+                    throw 'age control is not found';
+                }
+
+                addItemToTable(name.value, country.value, parseInt(year.value), genre.value);
+
+                picture.value='';
+                name.value = '';
+                country.value = '';
+                year.value = 1900;
+                genre.value = '';
+
+            });
+
+        }
+        
     }
 });
