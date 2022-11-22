@@ -64,7 +64,7 @@ function removeItemFromTable(id) {
     console.info('Removed');
 }
 
-document.addEventListener('DOMContentLoaded', function (myevent) { 
+document.addEventListener('DOMContentLoaded', function () { 
     console.info('Loaded');
 
     const form = document.querySelector("#frm-items");
@@ -75,17 +75,17 @@ document.addEventListener('DOMContentLoaded', function (myevent) {
         // Loop over them and prevent submission
         for (let i = 0; i < forms.length; i++) {
             const form = forms[i];
-            form.addEventListener('submit', function() {
+            form.addEventListener('submit', function(event) {
                 if (!form.checkValidity()) {
                     console.info('start check validation content');
-                    myevent.preventDefault();
-                    myevent.stopPropagation();
+                    event.preventDefault();
+                    event.stopPropagation();
                 }
                 form.classList.add('was-validated');
 
                 console.info('Form onsubmit');
 
-                myevent.preventDefault();
+                event.preventDefault();
 
                 const picture = document.querySelector("#filmPicture");
                 if (picture == null) {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function (myevent) {
                 const name = document.querySelector("#filmName");
 
                 if (name == null || name.value=="") {
-                    throw 'exc';
+                    throw 'name control is not found';
                 }
 
                 const country = document.querySelector("#filmCountry");
@@ -115,8 +115,6 @@ document.addEventListener('DOMContentLoaded', function (myevent) {
 
                 
                 const age = document.querySelector("#film16");
-                console.info(age.value);
-                console.info(age.checked);
                 if (age == null || !age.checked) {
                     throw 'age control is not found';
                 }
@@ -129,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function (myevent) {
                 year.value = 1900;
                 genre.value = '';
 
-            });
+            }, false);
 
         }
         
