@@ -1,0 +1,49 @@
+extends template.pug
+
+block variables
+    - var linkText='styleFilm.css'
+
+block title 
+    title Страница фильма
+
+block content
+    div(class="content container rounded my-5 p-4 text-center flex-wrap flex-grow-1")
+        div(class="content_header rounded-top p-2")
+            h1(class="fw-bold text-white ms-5 text-start") Страница фильма
+        div(class="container pt-4")
+            div(class="container d-block text-start")
+                img(class="row poster img-fluid float-start me-3 mt-3" src="images/zelenayamilya.jpg" alt="Зеленая миля"
+                    align="left")
+                a(class="col text-white fw-bold fs-2" href="film.html") Зеленая миля, 1999 г. 
+                span(class="col badge green-mark text-white fw-bold fs-5 mx-2 p-2") 9.2
+                button(class="col badge willSee text-white fw-bold fs-5 mx-2 p-2 border border-0") Буду смотреть
+            div(class="container table text-start fs-4")
+                div(class="row text-white fw-bold fs-3") О фильме
+                div(class="row")
+                    div(class="col-xs-6 col-sm-3") Год производства
+                    div(class="col-xs-6 col-sm-3") 1999
+                div(class="row")
+                    div(class="col-xs-6 col-sm-3") Страна
+                    div(class="col-xs-6 col-sm-3") США
+                div(class="row")
+                    div(class="col-xs-6 col-sm-3") Жанр
+                    div(class="col-xs-6 col-sm-3") драма, криминал
+                div(class="row")
+                    div(class="col-xs-6 col-sm-3") Длительность
+                    div(class="col-xs-6 col-sm-3") 189 мин. / 03:09
+                div(class="row")
+                    div(class="col-xs-6 col-sm-3") Возраст
+                    div(class="col-xs-6 col-sm-3") 16+
+            h3(class="text-white fw-bold m-auto p-1 fs-3 text-start") Описание
+            div(class="description text-start fs-4") Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый
+                | из узников которого однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых
+                | и надзирателей за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении,
+                | стал одним из самых необычных обитателей блока.
+        hr(class="border border-0 bg-black")
+        div(class="container")
+            h1(class="fs-1 fw-bold text-white ms-2 text-start") Трейлер
+            nav(class="ratio ratio-16x9")
+                iframe(class="p-2" src="https://www.youtube.com/embed/Ca3mUSDJlgM" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen)

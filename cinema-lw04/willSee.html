@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Буду смотреть</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styleWillSee.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header class="fs-4 fw-bold p-1">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
+                    <div id="main"><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
+
+                    <form class="col d-flex align-items-center needs-validation" novalidate>
+                        <input type="text" class="form-control" id="validationCustom01" name="text" search rounded
+                            required placeholder="Введите название" style="max-width: 200px;">
+                        <button type="submit" class="border border-0 p-0 ms-2"><img class="icon" src="images/search.jpg"
+                                alt="Поиск" /></button>
+                    </form>
+                    <div class="d-flex justify-content-end flex-grow-1 navbar-nav">
+                        <a class="text-decoration-none mx-3" href="choiceToTaste.html">Выбор по вкусу</a>
+                        <a class="text-decoration-none mx-3" href="willSee.html">Буду смотреть</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container rounded my-5 p-4 content">
+        <div class="content_header rounded-top p-2">
+            <h1 class="fs-1 fw-bold text-white ms-5">Список запланированных</h1>
+        </div>
+
+        <form id="frm-items" class="row g-3 fs-4 description fw-bold needs-validation-content" novalidate>
+            <div class="col-md-3">
+                <label for="filmPicture" class="form-label">Изображение</label>
+                <input type="file" class="form-control" id="filmPicture" value="" required>
+            </div>
+            <div class="col">
+                <label for="filmName" class="form-label">Название</label>
+                <input type="text" class="form-control" id="filmName" value="" placeholder="Введите название" required>
+            </div>
+            <div class="col">
+                <label for="filmCountry" class="form-label">Страна</label>
+                <select class="form-select" id="filmCountry" required>
+                    <option selected disabled value="">Выберите страну</option>
+                    <option>США</option>
+                    <option>Франция</option>
+                    <option>Великобритания</option>
+                    <option>Южная Корея</option>
+                    <option>Россия</option>
+                    <option>Япония</option>
+                    <option>Италия</option>
+                    <option>Испания</option>
+                    <option>Германия</option>
+                    <option>Турция</option>
+                    <option>Швеция</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="filmYear" class="form-label">Год</label>
+                <input type="number" class="form-control" id="filmYear" value="1900" min="1900" max="2022" step="1" placeholder="Введите год" required>
+            </div>
+            <div class="col">
+                <label for="filmGenre" class="form-label">Жанр</label>
+                <select class="form-select" id="filmGenre" required>
+                    <option selected disabled value="">Выберите жанр</option>
+                    <option>Комедия</option>
+                    <option>Фантастика</option>
+                    <option>Ужасы</option>
+                    <option>Боевик</option>
+                    <option>Мелодрама</option>
+                    <option>Мистика</option>
+                    <option>Детектив</option>
+                    <option>Военное кино</option>
+                    <option>Фильм-катастрофа</option>
+                </select>
+            </div>
+            <div class="form-check mx-2">
+                <input class="form-check-input" value="" type="checkbox" id="film16" required>
+                <label class="form-check-label" for="film16">
+                    Мне уже есть 16 лет
+                </label>
+                <div class="invalid-feedback">
+                    Подтвердите, что вам уже есть 16 лет
+                </div>
+            </div>
+            <div class="text-start">
+                <button id="btn-add-item" class="willSee p-1 border border-0 rounded text-white fw-bold fs-4"
+                    type="submit">Добавить</button>
+            </div>
+            <img src="" id="tempPicture" style="display: none;">
+        </form>
+        <hr class="border border-0 bg-black">
+
+        <table id="tbl-items" class="table">
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+    </div>
+    <footer class="d-flex align-items-center fw-bold fs-4 p-2 ps-5">
+        2022 г.
+        <nav class="d-flex justify-content-center flex-grow-1">
+            <a href="https://vk.com/id0" target="_blank"><img class="icon" src="images/vk.jpg" alt="VK"> </a>
+        </nav>
+    </footer>
+
+    <script src="js/searchMain.js"></script>
+    <script src="js/addFilmToWillSee.js"></script>
+</body>
+
+</html>

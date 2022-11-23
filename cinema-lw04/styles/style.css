@@ -1,0 +1,88 @@
+html,
+body {
+    background: #2b2d33;
+}
+
+h2 a {
+    text-decoration: none;
+}
+
+h2 a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background: #1a1c20;
+}
+
+header a {
+    color: #c2c2c2;
+}
+
+footer {
+    flex: 0 0 auto !important;
+    background: #1a1c20;
+    color: #c2c2c2;
+}
+
+footer nav {
+    color: #c2c2c2;
+}
+
+header a:hover {
+    color: #ffffff;
+}
+
+hr {
+    height: 2px; /* Толщина линии */
+}
+
+.description {
+    color: #8f9398;
+}
+
+.green-mark {
+    background-color: #38a65d;
+}
+
+
+.willSee {
+    background-color: #38a65d;
+}
+
+.content {
+    background: #40444d;
+    display: block;
+}
+
+.content_header {
+    margin: -1.5em -1.5em 0em -1.5em !important;
+    background-color: #8f9297;
+}
+
+.poster{
+    width: 90px;
+    height: 120px;
+}
+
+.icon {
+    width: 50px; 
+    height: 50px;
+}
+
+input {
+    max-width: 200px;
+}
+
+button {
+    background: #1a1c20;
+}
+
+@media screen and (max-width: 245px) {
+    .poster {
+        display: none !important;
+    }
+    .fs-1 {
+        margin-left: 1em !important;
+    }
+}

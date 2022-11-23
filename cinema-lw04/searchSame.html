@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск похожих</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styleSearchSame.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header class="fs-4 fw-bold p-1">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
+                    <div id="main"><a class="text-decoration-none mx-5" href="index.html">Главная</a></div>
+
+                    <form class="col d-flex align-items-center needs-validation" novalidate>
+                        <input type="text" class="form-control" id="validationCustom01"
+                            name="text"  search rounded required placeholder="Введите название">
+                        <button type="submit" class="border border-0 p-0 ms-2"><img class="icon" src="images/search.jpg"
+                                alt="Поиск" /></button>
+                    </form>
+                    <div class="d-flex justify-content-end flex-grow-1 navbar-nav">
+                        <a class="text-decoration-none mx-3" href="choiceToTaste.html">Выбор по вкусу</a>
+                        <a class="text-decoration-none mx-3" href="willSee.html">Буду смотреть</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container rounded my-5 p-4 content">
+        <div class="content_header rounded-top p-2">
+            <h1 class="fs-1 fw-bold text-white ms-5">Похожие результаты</h1>
+        </div>
+
+        <ol class="container-fluid col-xs-1 p-0 m-0 fs-5 ms-2 text-white fw-bold">
+            <li><img class="poster pt-3 me-3 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
+                <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">
+                    <div class="description d-flex flex-column justify-content-start align-items-center mb-5 fs-6">
+                        <h2 class="fs-5 fw-bold text-white pt-3"><a class="text-white" href="film.html">Зеленая миля</a></h2>
+                        США, 1999 г.<br>
+                        драма, криминал
+                    </div>
+                    <div id="rightPanel" class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">
+                        <div class="rounded p-1 mx-2 green-mark">9.2</div>
+                        <button class="willSee p-1 mx-2 border border-0 rounded text-white fw-bold" type="button">Буду
+                            смотреть</button>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="border border-0 bg-black">
+            <li><img class="poster pt-3 me-3 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left">
+                <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">
+                    <div class="description d-flex flex-column justify-content-start align-items-center mb-5 fs-6">
+                        <h2 class="fs-5 fw-bold text-white pt-3"><a class="text-white" href="film.html">Зеленая миля</a></h2>
+                        США, 1999 г.<br>
+                        драма, криминал
+                    </div>
+                    <div id="rightPanel" class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">
+                        <div class="rounded p-1 mx-2 green-mark">9.2</div>
+                        <button class="willSee p-1 mx-2 border border-0 rounded text-white fw-bold" type="button">Буду
+                            смотреть</button>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="border border-0 bg-black">
+        </ol>
+    </div>
+    <footer class="d-flex align-items-center fw-bold fs-4 p-2 ps-5">
+        2022 г.
+        <nav class="d-flex justify-content-center flex-grow-1">
+            <a href="https://vk.com/id0" target="_blank"><img class="icon" src="images/vk.jpg" alt="VK"> </a>
+        </nav>
+    </footer>
+    
+    <script src="js/searchMain.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+extends template.pug
+
+block variables
+    - var linkText='style.css'
+
+block title 
+    title Главная
+
+block append styles
+    link(rel='stylesheet' href='styles/banner.css')
+
+block banners
+    div#banner(class="d-flex align-items-center flex-column")
+        a(href="film1.html" class="hide")
+            img(src="images/banner1.jpg")
+        a(href="film2.html" class="hide")
+            img(src="images/banner2.jpg")        
+        a(href="film3.html" class="hide")
+            img(src="images/banner3.jpg")
+
+block content
+    div(class="container rounded my-5 p-4 content")
+        div(class="content_header rounded-top p-2")
+            h1(class="fs-1 fw-bold text-white ms-5") Топ 250 фильмов
+        ol(class="container-fluid col-xs-1 p-0 m-0 fs-5 ms-2 text-white fw-bold")
+            li
+                img(class="poster pt-3 me-3 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left")
+                div(class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center")
+                    div(class="description d-flex flex-column justify-content-start align-items-center mb-5 fs-6")
+                        h2(class="fs-5 fw-bold text-white pt-3")
+                            a(class="text-white" href="film.html") Зеленая миля
+                        | США, 1999 г.
+                        br
+                        | драма, криминал
+                    div#rightPanel(class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1")
+                        div(class="rounded p-1 mx-2 green-mark") 9.2
+                        button(class="willSee p-1 mx-2 border border-0 rounded text-white fw-bold" type="button") Буду смотреть
+            hr(class="border border-0 bg-black")
+            li
+                img(class="poster pt-3 me-3 img-fluid" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left")
+                div(class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center")
+                    div(class="description d-flex flex-column justify-content-start align-items-center mb-5 fs-6")
+                        h2(class="fs-5 fw-bold text-white pt-3")
+                            a(class="text-white" href="film.html") Зеленая миля
+                        | США, 1999 г.
+                        br
+                        | драма, криминал
+                    div#rightPanel(class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1")
+                        div(class="rounded p-1 mx-2 green-mark") 9.2
+                        button(class="willSee p-1 mx-2 border border-0 rounded text-white fw-bold" type="button") Буду смотреть
+            hr(class="border border-0 bg-black")
+
+block append endScripts
+    script(src="js/banner.js")

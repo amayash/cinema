@@ -4,23 +4,15 @@
   "description": "my first site",
   "main": "index.js",
   "scripts": {
-    "web-server": "http-server -p 3000 ./",
-    "build-pug": "pug -w pug/ -o ./ -P",
-    "fake-server": "json-server js/data.js -p 8079",
-    "start": "npm-run-all --parallel build-pug web-server",
+    "start": "http-server -p 3000 ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "6.2.0",
     "bootstrap": "5.2.1",
-    "handlebars": "4.7.7",
-    "pug": "^3.0.2",
-    "pug-cli": "^1.0.0-alpha6"
+    "@fortawesome/fontawesome-free": "6.2.0"
   },
   "devDependencies": {
-    "http-server": "14.1.1",
-    "json-server": "^0.17.1",
-    "npm-run-all": "4.1.5"
+    "http-server": "14.1.1"
   },
   "repository": {
     "type": "git",

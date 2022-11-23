@@ -1,0 +1,51 @@
+extends template.pug
+
+block title 
+    title Выбор по вкусу
+
+block variables
+    - var linkText='styleChoiceToTaste.css'
+    - var countries = [ "США", "Франция", "Великобритания", "Южная Корея", "Россия", "Япония", "Италия", "Испания", "Германия", "Турция", "Швеция"]
+    - var genres = [ "Комедия", "Фантастика", "Ужасы", "Боевик", "Мелодрама", "Мистика", "Детектив", "Военное кино", "Фильм-катастрова"]
+
+block content
+    div(class="container rounded my-5 content")
+        div(class="container")
+            div(class="content_header d-flex flex-wrap justify-content-around rounded-top p-2")
+                form(class="d-flex gap-2 flex-wrap justify-content-start align-items-center")
+                    div(class="d-flex align-items-center")
+                        h1(class="fw-bold text-white me-2 form-label") Жанр:
+                        select(name="genre" class="form-select")
+                            each item in genres
+                                option= item
+                    div(class="d-flex align-items-center")
+                        h1(class="fw-bold text-white me-2")
+                            label(for="year") Год:
+                        input(
+                            class="form-control"
+                            type="number" 
+                            step="1" 
+                            min="1900" 
+                            max="2022" 
+                            value="2020"
+                            id="year" 
+                            name="year")
+                    div(class="d-flex align-items-center")
+                        h1(class="fw-bold text-white me-2") Страна:
+                        select(name="country" class="form-select")
+                            each item in countries
+                                option= item
+                    button(type="submit" class="border border-0 p-0")
+                        img(class="icon" src="images/search.png" alt="Поиск")
+            div(class="container mt-5")
+                div(class="container")
+                    img(class="row poster me-4 img-fluid float-start" src="images/zelenayamilya.jpg" alt="Зеленая миля" align="left")
+                    a(class="col text-white fw-bold fs-2" href="film.html") Зеленая миля, 1999 г. 
+                    span(class="col badge green-mark text-white fw-bold fs-5 ms-2") 9.2
+                    div(class="text-wrap description lh-sm fs-1 mt-1") Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого
+                        | однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и
+                        | надзирателей за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении,
+                        | стал одним из самых необычных обитателей блока.
+                div(class="container-fluid row")
+                    button(class="col nextFilm border border-0 rounded text-white fw-bold fs-2 m-4" type="button") Следующий фильм
+                    button(class="col willSee border border-0 rounded text-white fw-bold fs-2 m-4" type="button") Буду смотреть

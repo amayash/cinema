@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+block variables
+    - var linkText = 'style.css'
+
+head
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    block title
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    script(src='node_modules/bootstrap/dist/js/bootstrap.min.js')
+    link(href='node_modules/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet')
+    link(href='node_modules/@fortawesome/fontawesome-free/css/all.min.css' rel='stylesheet')
+    block styles
+        link(rel='stylesheet' href='styles/' + linkText)
+
+body(class="d-flex flex-column h-100")
+    header(class="fs-4 fw-bold p-1")
+        nav(class="navbar navbar-expand-md navbar-dark")
+            div(class="container-fluid")
+                button(
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation") 
+                    span(class="navbar-toggler-icon")
+                div#navbarNav(class="navbar-collapse collapse justify-content-end")
+                    #main 
+                        a(class="text-decoration-none mx-5" href="index.html") Главная
+                    form(class="col d-flex align-items-center needs-validation" novalidate action="searchSame.html")
+                        block inputSizeControl
+                            input(type="text" class="form-control"
+                                name="text"  search rounded required placeholder="Введите название")
+                        button(type="submit" class="border border-0 p-0 ms-2")
+                            img(class="icon" src="images/search.jpg"
+                                alt="Поиск")
+                    div(class="d-flex justify-content-end flex-grow-1 navbar-nav")
+                        a(class="text-decoration-none mx-3" href="choiceToTaste.html") Выбор по вкусу
+                        a(class="text-decoration-none mx-3" href="willSee.html") Буду смотреть
+    block banners
+    block content
+    footer(class="d-flex align-items-center fw-bold fs-4 p-2 ps-5") 2022 г.
+        nav(class="d-flex justify-content-center flex-grow-1")
+            a(href="https://vk.com/id0" target="_blank")
+            img(class="icon" src="images/vk.jpg" alt="VK")
+    block endScripts
+        script(src="js/searchMain.js")
