@@ -1,6 +1,5 @@
 'use strict'
 
-
 document.querySelector("#filmPicture").addEventListener("change", function() {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
@@ -10,65 +9,191 @@ document.querySelector("#filmPicture").addEventListener("change", function() {
     reader.readAsDataURL(this.files[0]);
 });
 
-function addItemToTable(name, country, year, genre) {
-    console.info('Try to add item');
+const items = new Map();
 
-    const table = document.querySelector("#tbl-items tbody");
-    if (table == null) {
-        throw 'Table is not found';
+class ItemLine {
+    constructor(image, name, country, year, genre) {
+        this.image = image;
+        this.name = name;
+        this.country = country;
+        this.year = parseInt(year);
+        this.genre = genre;
     }
 
-    const id = 'item-' + Date.now();
+    static createFrom(item) {
+        return new ItemLine(item.image, item.name, item.country, item.year, item.genre);
+    }
+}
 
-    const tableHtml = 
-    '<tr id="' + id + '"><td><img class="poster me-3 img-fluid" src="'+document.getElementById("tempPicture").src+'" alt="'+name+'" align="left">\
-    <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">\
-        <div class="pt-3 description d-flex flex-column justify-content-start align-items-center mb-3 fs-6 fw-bold">\
-            <p class="text-start description">\
-            <a class="text-white fs-5 fw-bold pt-3" href="film.html">'+name+'</a><br>'
-            +country+', '+ year+' г.<br>'+
-            genre+'</p></div>\
-            <div id="rightPanel"\
-			class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">\
-			<div class="rounded p-1 mx-2 green-mark">9.2</div>\
-			<a href=# onclick="removeItemFromTable(\''+ id +'\')"><button class="delete p-1 px-2 mx-2 border border-0 rounded text-white fw-bold"\
-            type="button">Убрать</button></a>\
-		</div>\
-    </div>' +
-    '<hr class="border border-0 bg-black"></td></tr>';
+function loadItemsTable() {
+    console.info('Try to load data');
 
-    table.innerHTML += tableHtml;
+    function drawItemsTable() {
+        console.info('Try to draw table');
 
-    console.info('Added');
+        const table = document.querySelector("#tbl-items tbody");
+        if (table == null) {
+            throw 'Table is not found';
+        }
+
+        fetch("handlebars/items-table.html")
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (html) {
+                const template = Handlebars.compile(html);
+                table.innerHTML = template({ 'items': Object.fromEntries(items.entries()) });
+                console.info('Drawn');
+            })
+            .catch(function (error) {
+                console.error('Error:', error);
+                throw "Can't render template";
+            });
+    }
+
+    fetch("http://localhost:8079/lines")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.info('Loaded');
+            items.clear();
+            for (let i = 0; i < data.length; i++) {
+                const current = data[i];
+                items.set(current.id, ItemLine.createFrom(current));
+            }
+            drawItemsTable();
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+            throw "Can't load items";
+        });
+}
+
+function addItemToTable(image, name, country, year, genre) {
+    console.info('Try to add item');
+
+    const itemObject = new ItemLine(image, name, country, year, genre);
+
+    fetch("http://localhost:8079/lines", 
+        { 
+            method: 'POST', 
+            body: JSON.stringify(itemObject),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.info('Added');
+            console.log(data);
+            
+            loadItemsTable();
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+            throw "Can't add item";
+        });
 }
 
 function removeItemFromTable(id) {
     console.info('Try to remove item');
 
-    if (!confirm(`Вы действительно хотите удалить фильм из списка запланированных?`)) {
+    if (!confirm('Вы действительно хотите удалить фильм из списка запланированных?')) {
         console.info('Canceled');
         return;
     }
 
-    const temp = document.querySelector('#' + id);
-    if (temp == null) {
+    if (!items.has(id)) {
         throw 'Item with id [' + id + '] is not found';
     }
-    temp.remove();
 
-    const numbers = document.querySelectorAll("#tbl-items tbody tr th");
-    for (let i = 0; i < numbers.length; i++) {
-        numbers[i].innerHTML = i + 1;
-    }
+    fetch("http://localhost:8079/lines/" + id,
+        {
+            method: 'DELETE'
+        })
+        .then(function () {
+            console.info('Removed');
 
-    console.info('Removed');
+            loadItemsTable();
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+            throw "Can't add item";
+        });
 }
 
-document.addEventListener('DOMContentLoaded', function () { 
-    console.info('Loaded');
+function loadItemsSelect(select) {
+    function drawItemsSelect(select, data) {
+        console.info(`Try to load data on ${select.id}`)
+        fetch("handlebars/items-select.html")
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (html) {
+                const template = Handlebars.compile(html);
+                select.innerHTML += template({ 'items': data });
+            })
+            .catch(function (error) {
+                console.error('Error:', error);
+                throw "Can't load items";
+            });
+    }
+
+    fetch(`http://localhost:8079/${select.id}`)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            drawItemsSelect(select, data);
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+            throw `Can't load ${select.id}`;
+        });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.info('Script Loaded');
+
+    const picture = document.querySelector("#filmPicture");
+    if (picture == null) {
+        throw 'picture control is not found';
+    }
+
+    const name = document.querySelector("#filmName");
+    if (name == null) {
+        throw 'name control is not found';
+    }
+
+    const country = document.querySelector("#filmCountry");
+    if (country == null) {
+        throw 'country control is not found';
+    }
+
+    const year = document.querySelector("#filmYear");
+    if (year == null) {
+        throw 'year control is not found';
+    }
+
+    const genre = document.querySelector("#filmGenre");
+    if (genre == null) {
+        throw 'genre control is not found';
+    }
+
+    const age = document.querySelector("#film16");
+    if (age == null ) {
+        throw 'age control is not found';
+    }
+
+    loadItemsSelect(country);
+    loadItemsSelect(genre);
+    loadItemsTable();
 
     const form = document.querySelector("#frm-items");
-
     if (form !== null) {
         const forms = document.querySelectorAll('.needs-validation-content');
 
@@ -83,43 +208,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 form.classList.add('was-validated');
 
-                console.info('Form onsubmit');
+                if (name.value == '') {
+                    throw 'name is empty';
+                }
 
+                if (country.value == '') {
+                    throw 'country is empty';
+                }
+
+                if (genre.value == '') {
+                    throw 'genre is empty';
+                }
+
+                if (!age.checked) {
+                    throw 'you are not 16+';
+                }
+
+                console.info('Form onsubmit');
                 event.preventDefault();
 
-                const picture = document.querySelector("#filmPicture");
-                if (picture == null) {
-                    throw 'picture control is not found';
-                }
-
-                const name = document.querySelector("#filmName");
-
-                if (name == null || name.value=="") {
-                    throw 'name control is not found';
-                }
-
-                const country = document.querySelector("#filmCountry");
-                if (country == null || country.value=="") {
-                    throw 'country control is not found';
-                }
-
-                const year = document.querySelector("#filmYear");
-                if (year == null) {
-                    throw 'year control is not found';
-                }
-
-                const genre = document.querySelector("#filmGenre");
-                if (genre == null || genre.value=="") {
-                    throw 'genre control is not found';
-                }
-
-                
-                const age = document.querySelector("#film16");
-                if (age == null || !age.checked) {
-                    throw 'age control is not found';
-                }
-
-                addItemToTable(name.value, country.value, parseInt(year.value), genre.value);
+                addItemToTable(document.getElementById("tempPicture").src, name.value, country.value, parseInt(year.value), genre.value);
 
                 picture.value='';
                 name.value = '';
@@ -128,8 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 genre.value = '';
 
             }, false);
-
         }
-        
     }
+
 });

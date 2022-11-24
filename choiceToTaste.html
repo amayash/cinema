@@ -5,6 +5,7 @@
   <title>Выбор по вкусу</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styleChoiceToTaste.css">
@@ -31,17 +32,7 @@
         <form class="d-flex gap-2 flex-wrap justify-content-start align-items-center">
           <div class="d-flex align-items-center">
             <h1 class="fw-bold text-white me-2 form-label">Жанр:</h1>
-            <select class="form-select" name="genre">
-              <option>Комедия</option>
-              <option>Фантастика</option>
-              <option>Ужасы</option>
-              <option>Боевик</option>
-              <option>Мелодрама</option>
-              <option>Мистика</option>
-              <option>Детектив</option>
-              <option>Военное кино</option>
-              <option>Фильм-катастрова</option>
-            </select>
+            <select class="form-select" id="filmGenre" name="genre"></select>
           </div>
           <div class="d-flex align-items-center">
             <h1 class="fw-bold text-white me-2">
@@ -51,19 +42,7 @@
           </div>
           <div class="d-flex align-items-center">
             <h1 class="fw-bold text-white me-2">Страна:</h1>
-            <select class="form-select" name="country">
-              <option>США</option>
-              <option>Франция</option>
-              <option>Великобритания</option>
-              <option>Южная Корея</option>
-              <option>Россия</option>
-              <option>Япония</option>
-              <option>Италия</option>
-              <option>Испания</option>
-              <option>Германия</option>
-              <option>Турция</option>
-              <option>Швеция</option>
-            </select>
+            <select class="form-select" id="filmCountry" name="country"></select>
           </div>
           <button class="border border-0 p-0" type="submit"><img class="icon" src="images/search.png" alt="Поиск"></button>
         </form>
@@ -78,7 +57,7 @@
         </div>
         <div class="container-fluid row">
           <button class="col nextFilm border border-0 rounded text-white fw-bold fs-2 m-4" type="button">Следующий фильм</button>
-          <button class="col willSee border border-0 rounded text-white fw-bold fs-2 m-4" type="button">Буду смотреть</button>
+          <button class="col willSee border border-0 rounded text-white fw-bold fs-2 m-4" type="button">Буду смотреть </button>
         </div>
       </div>
     </div>
@@ -87,4 +66,5 @@
     <nav class="d-flex justify-content-center flex-grow-1"><a href="https://vk.com/id0" target="_blank"></a><img class="icon" src="images/vk.jpg" alt="VK"></nav>
   </footer>
   <script src="js/searchMain.js"></script>
+  <script src="js/addSelectVarity.js"></script>
 </body>

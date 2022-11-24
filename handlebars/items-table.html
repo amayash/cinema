@@ -1,0 +1,21 @@
+{{#each items}}
+    <tr id="item-{{@key}}">
+        <td>
+            <img class="poster me-3 img-fluid" src={{this.image}} alt={{this.name}} align="left">
+            <div class="d-flex flex-row flex-wrap  flex-grow-1 align-items-center">
+                <div
+                    class="pt-3 description d-flex flex-column justify-content-start align-items-center mb-3 fs-6 fw-bold">
+                    <p class="text-start description"> <a class="text-white fs-5 fw-bold pt-3"
+                            href="film.html">{{this.name}}</a><br>{{this.country}}, {{this.year}} г.<br>{{this.genre}}</p>
+                </div>
+                <div id="rightPanel" class="d-flex flex-wrap justify-content-end text-white fw-bold fs-4 flex-grow-1">
+                    <div class="rounded p-1 mx-2 green-mark">9.2</div> <a href="#"
+                        onclick="removeItemFromTable({{@key}})"><button
+                            class="delete p-1 px-2 mx-2 border border-0 rounded text-white fw-bold"
+                            type="button">Убрать</button></a>
+                </div>
+            </div>
+            <hr class="border border-0 bg-black">
+        </td>
+    </tr>
+{{/each}}

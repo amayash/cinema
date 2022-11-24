@@ -5,9 +5,7 @@ block title
 
 block variables
     - var linkText='styleChoiceToTaste.css'
-    - var countries = [ "США", "Франция", "Великобритания", "Южная Корея", "Россия", "Япония", "Италия", "Испания", "Германия", "Турция", "Швеция"]
-    - var genres = [ "Комедия", "Фантастика", "Ужасы", "Боевик", "Мелодрама", "Мистика", "Детектив", "Военное кино", "Фильм-катастрова"]
-
+    
 block content
     div(class="container rounded my-5 content")
         div(class="container")
@@ -15,9 +13,7 @@ block content
                 form(class="d-flex gap-2 flex-wrap justify-content-start align-items-center")
                     div(class="d-flex align-items-center")
                         h1(class="fw-bold text-white me-2 form-label") Жанр:
-                        select(name="genre" class="form-select")
-                            each item in genres
-                                option= item
+                        select(id="filmGenre" name="genre" class="form-select")
                     div(class="d-flex align-items-center")
                         h1(class="fw-bold text-white me-2")
                             label(for="year") Год:
@@ -32,9 +28,7 @@ block content
                             name="year")
                     div(class="d-flex align-items-center")
                         h1(class="fw-bold text-white me-2") Страна:
-                        select(name="country" class="form-select")
-                            each item in countries
-                                option= item
+                        select(id="filmCountry" name="country" class="form-select")
                     button(type="submit" class="border border-0 p-0")
                         img(class="icon" src="images/search.png" alt="Поиск")
             div(class="container mt-5")
@@ -48,4 +42,7 @@ block content
                         | стал одним из самых необычных обитателей блока.
                 div(class="container-fluid row")
                     button(class="col nextFilm border border-0 rounded text-white fw-bold fs-2 m-4" type="button") Следующий фильм
-                    button(class="col willSee border border-0 rounded text-white fw-bold fs-2 m-4" type="button") Буду смотреть
+                    button(class="col willSee border border-0 rounded text-white fw-bold fs-2 m-4" type="button") Буду смотреть 
+
+block append endScripts
+    script(src="js/addSelectVarity.js")

@@ -5,6 +5,7 @@
   <title>Буду смотреть</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styleWillSee.css">
@@ -42,17 +43,6 @@
         <label class="form-label" for="filmCountry">Страна</label>
         <select class="form-select" id="filmCountry" required>
           <option selected disabled value="">Выберите страну</option>
-          <option>США</option>
-          <option>Франция</option>
-          <option>Великобритания</option>
-          <option>Южная Корея</option>
-          <option>Россия</option>
-          <option>Япония</option>
-          <option>Италия</option>
-          <option>Испания</option>
-          <option>Германия</option>
-          <option>Турция</option>
-          <option>Швеция</option>
         </select>
       </div>
       <div class="col">
@@ -60,18 +50,9 @@
         <input class="form-control" id="filmYear" type="number" value="1900" min="1900" max="2022" step="1" placeholder="Введите год" required>
       </div>
       <div class="col">
-        <label class="form-label" for="filmYear">Жанр</label>
+        <label class="form-label" for="filmGenre">Жанр</label>
         <select class="form-select" id="filmGenre" required>
           <option selected disabled value="">Выберите жанр</option>
-          <option>Комедия</option>
-          <option>Фантастика</option>
-          <option>Ужасы</option>
-          <option>Боевик</option>
-          <option>Мелодрама</option>
-          <option>Мистика</option>
-          <option>Детектив</option>
-          <option>Военное кино</option>
-          <option>Фильм-катастрофа</option>
         </select>
       </div>
       <div class="form-check mx-2">

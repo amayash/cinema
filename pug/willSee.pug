@@ -2,8 +2,6 @@ extends template.pug
 
 block variables
     - var linkText='styleWillSee.css'
-    - var countries = [ "США", "Франция", "Великобритания", "Южная Корея", "Россия", "Япония", "Италия", "Испания", "Германия", "Турция", "Швеция"]
-    - var genres = [ "Комедия", "Фантастика", "Ужасы", "Боевик", "Мелодрама", "Мистика", "Детектив", "Военное кино", "Фильм-катастрофа"]
     
 block title 
     title Буду смотреть
@@ -19,25 +17,21 @@ block content
         form#frm-items(class="row g-3 fs-4 description fw-bold needs-validation-content" novalidate)
             div(class="col-md-3")
                 label(for="filmPicture" class="form-label") Изображение
-                input#filmPicture(type="file" class="form-control" value="" required)
+                input(id="filmPicture" type="file" class="form-control" value="" required)
             div(class="col")
                 label(for="filmName" class="form-label") Название
-                input#filmName(type="text" class="form-control" value="" placeholder="Введите название" required)
+                input(id="filmName" type="text" class="form-control" value="" placeholder="Введите название" required)
             div(class="col")
                 label(for="filmCountry" class="form-label") Страна
-                select(class="form-select" id="filmCountry" required)
+                select(id="filmCountry" class="form-select" required)
                     option(selected disabled value="") Выберите страну
-                    each item in countries
-                        option= item
             div(class="col")
                 label(for="filmYear" class="form-label") Год
-                input#filmYear(type="number" class="form-control" value="1900" min="1900" max="2022" step="1" placeholder="Введите год" required)
+                input(id="filmYear" type="number" class="form-control" value="1900" min="1900" max="2022" step="1" placeholder="Введите год" required)
             div(class="col")
-                label(for="filmYear" class="form-label") Жанр
-                select(class="form-select" id="filmGenre" required)
+                label(for="filmGenre" class="form-label") Жанр
+                select(id="filmGenre" class="form-select" required)
                     option(selected disabled value="") Выберите жанр
-                    each item in genres
-                        option= item
             div(class="form-check mx-2")
                 input#film16(class="form-check-input" value="" type="checkbox" required)
                 label(class="form-check-label" for="film16") Мне уже 16 лет
