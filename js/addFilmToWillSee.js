@@ -198,7 +198,7 @@ function loadItemsSelect(select) {
             })
             .then(function (html) {
                 const template = Handlebars.compile(html);
-                select.innerHTML += template({ 'items': data });
+                select.innerHTML = template({ 'items': data });
             })
             .catch(function (error) {
                 console.error('Error:', error);
