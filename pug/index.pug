@@ -10,13 +10,13 @@ block append styles
     link(rel='stylesheet' href='styles/banner.css')
 
 block banners
-    div#banner(class="d-flex align-items-center flex-column")
+    div(id="banner" class="d-flex align-items-center flex-column")
         a(href="film1.html" class="hide")
-            img(src="images/banner1.jpg" class="img-fluid")
+            img(src="images/banner1.jpg")
         a(href="film2.html" class="hide")
-            img(src="images/banner2.jpg" class="img-fluid")        
+            img(src="images/banner2.jpg")        
         a(href="film3.html" class="hide")
-            img(src="images/banner3.jpg" class="img-fluid")
+            img(src="images/banner3.jpg")
 
 block content
     div(class="container rounded my-5 p-4 content")
