@@ -114,7 +114,6 @@ function editItemInTable(id) {
     if (genre == null) { throw 'genre control is not found'; }
     loadItemsSelect(country);
     loadItemsSelect(genre);
-
     
     document.querySelector("#filmPictureEdit").addEventListener("change", function() {
         const reader = new FileReader();
