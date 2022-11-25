@@ -1,6 +1,5 @@
 #banner {
     margin: 15px;
-    min-height: 40%;  
 }
 
 @keyframes newAnim {
@@ -9,12 +8,13 @@
 }
 
 #banner img {
+    max-width: 90%;
     border-radius: 5px;
-
     animation: newAnim 1s forwards;
 }
 
 #banner a.show {
+    text-align: center;
     display: block;
 }
 
