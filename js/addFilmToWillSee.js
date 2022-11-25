@@ -99,6 +99,68 @@ function addItemToTable(image, name, country, year, genre) {
         });
 }
 
+function editItemInTable(id) {
+    console.info('Start edit script');
+
+    const picture = document.querySelector("#filmPictureEdit");
+    if (picture == null) { throw 'picture control is not found'; }
+    const name = document.querySelector("#filmNameEdit");
+    if (name == null) { throw 'name control is not found'; }
+    const country = document.querySelector("#filmCountryEdit");
+    if (country == null) { throw 'country control is not found'; }
+    const year = document.querySelector("#filmYearEdit");
+    if (year == null) { throw 'year control is not found'; }
+    const genre = document.querySelector("#filmGenreEdit");
+    if (genre == null) { throw 'genre control is not found'; }
+    loadItemsSelect(country);
+    loadItemsSelect(genre);
+
+    
+    document.querySelector("#filmPictureEdit").addEventListener("change", function() {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            const uploaded_image = reader.result;
+            document.querySelector("#tempPicture").src = uploaded_image;
+        });
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    const form = document.querySelector("#frm-items-edit");
+    if (form !== null) {
+        form.addEventListener('submit', function (event) {
+            console.info('Form onsubmit');
+            event.preventDefault();
+
+            const itemObject = new ItemLine(document.getElementById("tempPicture").src, name.value, country.value,
+            parseInt(year.value), genre.value);
+
+           fetch("http://localhost:8079/lines/"+id, {
+                method: 'PUT',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(itemObject)
+               })
+               .then((response) => response.json())
+               .then((result) => {
+                   console.log('Success:', result);
+                   loadItemsTable();
+               })
+               .catch((error) => {
+                   console.error('Error:', error);
+               });
+
+           picture.value='';
+           name.value = '';
+           country.value = '';
+           year.value = 1900;
+           genre.value = '';
+
+        });
+    }
+    
+}
+
 function removeItemFromTable(id) {
     console.info('Try to remove item');
 
@@ -127,6 +189,7 @@ function removeItemFromTable(id) {
 }
 
 function loadItemsSelect(select) {
+    
     function drawItemsSelect(select, data) {
         console.info(`Try to load data on ${select.id}`)
         fetch("handlebars/items-select.html")
@@ -143,7 +206,11 @@ function loadItemsSelect(select) {
             });
     }
 
-    fetch(`http://localhost:8079/${select.id}`)
+    let link = select.id;
+    if (select.id.includes('Edit'))
+        link = select.id.substring(0, select.id.length-4);
+
+    fetch(`http://localhost:8079/${link}`)
         .then(function (response) {
             return response.json();
         })
@@ -160,34 +227,17 @@ document.addEventListener('DOMContentLoaded', function () {
     console.info('Script Loaded');
 
     const picture = document.querySelector("#filmPicture");
-    if (picture == null) {
-        throw 'picture control is not found';
-    }
-
     const name = document.querySelector("#filmName");
-    if (name == null) {
-        throw 'name control is not found';
-    }
-
     const country = document.querySelector("#filmCountry");
-    if (country == null) {
-        throw 'country control is not found';
-    }
-
     const year = document.querySelector("#filmYear");
-    if (year == null) {
-        throw 'year control is not found';
-    }
-
     const genre = document.querySelector("#filmGenre");
-    if (genre == null) {
-        throw 'genre control is not found';
-    }
-
     const age = document.querySelector("#film16");
-    if (age == null ) {
-        throw 'age control is not found';
-    }
+    if (picture == null) { throw 'picture control is not found'; }
+    if (name == null) { throw 'name control is not found'; }
+    if (country == null) { throw 'country control is not found'; }
+    if (year == null) { throw 'year control is not found'; }
+    if (genre == null) { throw 'genre control is not found'; }
+    if (age == null ) { throw 'age control is not found'; }
 
     loadItemsSelect(country);
     loadItemsSelect(genre);
@@ -207,22 +257,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     event.stopPropagation();
                 }
                 form.classList.add('was-validated');
-
-                if (name.value == '') {
-                    throw 'name is empty';
-                }
-
-                if (country.value == '') {
-                    throw 'country is empty';
-                }
-
-                if (genre.value == '') {
-                    throw 'genre is empty';
-                }
-
-                if (!age.checked) {
-                    throw 'you are not 16+';
-                }
+                if (name.value == '') { throw 'name is empty'; }
+                if (country.value == '') { throw 'country is empty'; }
+                if (genre.value == '') { throw 'genre is empty';}
+                if (!age.checked) { throw 'you are not 16+'; }
 
                 console.info('Form onsubmit');
                 event.preventDefault();
