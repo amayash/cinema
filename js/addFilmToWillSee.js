@@ -1,5 +1,6 @@
 'use strict'
 
+
 document.querySelector("#filmPicture").addEventListener("change", function() {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
@@ -112,8 +113,13 @@ function editItemInTable(id) {
     if (year == null) { throw 'year control is not found'; }
     const genre = document.querySelector("#filmGenreEdit");
     if (genre == null) { throw 'genre control is not found'; }
-    loadItemsSelect(country);
-    loadItemsSelect(genre);
+    loadItemsSelect(country, items.get(id).country);
+
+    loadItemsSelect(genre, items.get(id).genre);
+
+    name.value=items.get(id).name;
+    year.value=items.get(id).year;
+
     
     document.querySelector("#filmPictureEdit").addEventListener("change", function() {
         const reader = new FileReader();
@@ -133,6 +139,7 @@ function editItemInTable(id) {
             const itemObject = new ItemLine(document.getElementById("tempPicture").src, name.value, country.value,
             parseInt(year.value), genre.value);
 
+            $('#exampleModal').modal('toggle');
            fetch("http://localhost:8079/lines/"+id, {
                 method: 'PUT',
                 headers: {
@@ -142,19 +149,16 @@ function editItemInTable(id) {
                })
                .then((response) => response.json())
                .then((result) => {
-                   console.log('Success:', result);
-                   loadItemsTable();
-               })
+                    console.log('Success:', result);
+                    loadItemsTable();
+                })
                .catch((error) => {
+                    
                    console.error('Error:', error);
                });
 
            picture.value='';
-           name.value = '';
-           country.value = '';
-           year.value = 1900;
-           genre.value = '';
-
+               
         });
     }
     
@@ -187,7 +191,7 @@ function removeItemFromTable(id) {
         });
 }
 
-function loadItemsSelect(select) {
+function loadItemsSelect(select, value) {
     
     function drawItemsSelect(select, data) {
         console.info(`Try to load data on ${select.id}`)
@@ -198,6 +202,8 @@ function loadItemsSelect(select) {
             .then(function (html) {
                 const template = Handlebars.compile(html);
                 select.innerHTML = template({ 'items': data });
+                if (value)
+                    select.value=value;
             })
             .catch(function (error) {
                 console.error('Error:', error);
@@ -271,6 +277,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 country.value = '';
                 year.value = 1900;
                 genre.value = '';
+
+                
 
             }, false);
         }

@@ -1,0 +1,80 @@
+extends ../template/template.pug
+
+block styles
+    link(rel='stylesheet' href='styles/styleWillSee.css')
+    
+block title 
+    title Буду смотреть
+
+block inputSizeControl
+    input(type="text" class="form-control"
+        name="text"  search rounded required placeholder="Введите название" style="max-width: 200px;")
+
+block content
+    div(class="container rounded my-5 p-4 content")
+        div(class="content_header rounded-top p-2")
+            h1(class="fs-1 fw-bold text-white ms-5") Список запланированных
+        form#frm-items(class="row g-3 fs-4 description fw-bold needs-validation-content" novalidate)
+            div(class="col-md-3")
+                label(for="filmPicture" class="form-label") Изображение
+                input(id="filmPicture" type="file" class="form-control" value="" required)
+            div(class="col")
+                label(for="filmName" class="form-label") Название
+                input(id="filmName" type="text" class="form-control" value="" placeholder="Введите название" required)
+            div(class="col")
+                label(for="filmCountry" class="form-label") Страна
+                select(id="filmCountry" class="form-select" required)
+                    option(selected disabled value="") Выберите страну
+            div(class="col")
+                label(for="filmYear" class="form-label") Год
+                input(id="filmYear" type="number" class="form-control" value="1900" min="1900" max="2022" step="1" placeholder="Введите год" required)
+            div(class="col")
+                label(for="filmGenre" class="form-label") Жанр
+                select(id="filmGenre" class="form-select" required)
+                    option(selected disabled value="") Выберите жанр
+            div(class="form-check mx-2")
+                input#film16(class="form-check-input" value="" type="checkbox" required)
+                label(class="form-check-label" for="film16") Мне уже 16 лет
+                div(class="invalid-feedback") Подтвердите, что вам уже есть 16 лет
+            div(class="text-start")
+                button#btn-add-item(class="willSee p-1 border border-0 rounded text-white fw-bold fs-4" type="submit") Добавить
+        
+        div(class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true")
+            div( class="modal-dialog")
+                div(class="modal-content")
+                    div(class="modal-header")
+                        h1(class="modal-title fs-5 text-secondary" id="exampleModalLabel") Редактирование
+                        button(type="button" id="buttonClose" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close")
+                    div(class="modal-body")
+                        form#frm-items-edit(class="row g-3 fs-4 description fw-bold")
+                            div(class="row")
+                                label(for="filmPictureEdit" class="form-label") Изображение
+                                input(id="filmPictureEdit" type="file" class="form-control" value="" required)
+                            div(class="row")
+                                label(for="filmNameEdit" class="form-label") Название
+                                input(id="filmNameEdit" type="text" class="form-control" value="" placeholder="Введите название" required)
+                            div(class="row")
+                                label(for="filmCountryEdit" class="form-label") Страна
+                                select(id="filmCountryEdit" class="form-select" required)
+                                    option(selected disabled value="") Выберите значение
+                            div(class="row")
+                                label(for="filmYearEdit" class="form-label") Год
+                                input(id="filmYearEdit" type="number" class="form-control" value="1900" min="1900" max="2022" step="1" placeholder="Введите год" required)
+                            div(class="row")
+                                label(for="filmGenreEdit" class="form-label") Жанр
+                                select(id="filmGenreEdit" class="form-select" required)
+                                    option(selected disabled value="") Выберите значение
+                            div(class="text-start")
+                                button(type="button" class="btn btn-secondary" data-bs-dismiss="modal") Отмена
+                                button(type="submit" class="btn btn-primary" id="buttonSaveChanges") Сохранить изменения
+
+        img#tempPicture(src="" style="display: none;")
+        hr(class="border border-0 bg-black")
+        table#tbl-items(class="table")
+            tbody                        
+    
+block append endScripts
+    script(src="js/addFilmToWillSee.js")
+    script(src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous")

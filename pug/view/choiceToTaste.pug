@@ -1,10 +1,10 @@
-extends template.pug
+extends ../template/template.pug
 
 block title 
     title Выбор по вкусу
 
-block variables
-    - var linkText='styleChoiceToTaste.css'
+block styles
+    link(rel='stylesheet' href='styles/styleChoiceToTaste.css')
     
 block content
     div(class="container rounded my-5 content")

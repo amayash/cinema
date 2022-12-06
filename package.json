@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "web-server": "http-server -p 3000 ./",
-    "build-pug": "pug -w pug/ -o ./ -P",
+    "build-pug": "pug -w pug/view -o ./ -P",
     "fake-server": "json-server js/data.js -p 8079",
     "start": "npm-run-all --parallel build-pug web-server fake-server",
     "test": "echo \"Error: no test specified\" && exit 1"

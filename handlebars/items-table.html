@@ -14,57 +14,6 @@
                     <i class="fas fa-edit"></i>
                 </button>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5 text-secondary" id="exampleModalLabel">Редактирование</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-
-                                <form class="row g-3 fs-4 description fw-bold needs-validation-content-edit" id="frm-items-edit"
-                                    novalidate>
-                                    <div class="row">
-                                        <label class="form-label" for="filmPictureEdit">Изображение</label>
-                                        <input class="form-control" id="filmPictureEdit" type="file" value="" required>
-                                    </div>
-                                    <div class="row">
-                                        <label class="form-label" for="filmNameEdit">Название</label>
-                                        <input class="form-control" id="filmNameEdit" type="text" value=""
-                                            placeholder="Введите название" required>
-                                    </div>
-                                    <div class="row">
-                                        <label class="form-label" for="filmCountryEdit">Страна</label>
-                                        <select class="form-select" id="filmCountryEdit" required>
-                                            <option selected disabled value="">Выберите страну</option>
-                                        </select>
-                                    </div>
-                                    <div class="row">
-                                        <label class="form-label" for="filmYearEdit">Год</label>
-                                        <input class="form-control" id="filmYearEdit" type="number" value="1900" min="1900"
-                                            max="2022" step="1" placeholder="Введите год" required>
-                                    </div>
-                                    <div class="row">
-                                        <label class="form-label" for="filmGenreEdit">Жанр</label>
-                                        <select class="form-select" id="filmGenreEdit" required>
-                                            <option selected disabled value="">Выберите жанр</option>
-                                        </select>
-                                    </div>
-                                    <div class="text-start">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Сохранить изменения</button>
-                                    </div>
-                                </form>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <a href="#" onclick="removeItemFromTable({{@key}})">
                     <button class="delete p-1 px-2 mx-2 border border-0 rounded text-white fw-bold" type="button">Убрать
                     </button>

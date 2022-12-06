@@ -1,7 +1,5 @@
 doctype html
 html(lang="en")
-block variables
-    - var linkText = 'style.css'
 
 head
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
@@ -12,7 +10,7 @@ head
     link(href='node_modules/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet')
     link(href='node_modules/@fortawesome/fontawesome-free/css/all.min.css' rel='stylesheet')
     block styles
-        link(rel='stylesheet' href='styles/' + linkText)
+        link(rel='stylesheet' href='styles/style.css')
 
 body(class="d-flex flex-column h-100")
     header(class="fs-4 fw-bold p-1")
