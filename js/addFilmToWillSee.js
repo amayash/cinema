@@ -119,7 +119,6 @@ function editItemInTable(id) {
 
     name.value=items.get(id).name;
     year.value=items.get(id).year;
-
     
     document.querySelector("#filmPictureEdit").addEventListener("change", function() {
         const reader = new FileReader();
@@ -277,8 +276,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 country.value = '';
                 year.value = 1900;
                 genre.value = '';
-
-                
 
             }, false);
         }
