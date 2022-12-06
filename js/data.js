@@ -32,7 +32,7 @@ module.exports = function () {
                 "name": "Остров проклятых",
                 "country": "США",
                 "year": 2009,
-                "genre": "детектив",
+                "genre": "Детектив",
                 "id": 2
             }
         ]
